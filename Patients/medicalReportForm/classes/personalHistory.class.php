@@ -6,7 +6,7 @@
     private $other;
     private $reasonForXray;
 
-    function __construct($nic, $data, $illnessDetails, $other, $reasonForXray){
+    public function __construct($nic, $data, $illnessDetails, $other, $reasonForXray){
       $this->nic = $nic;
       $this->data = $data;
       $this->illnessDetails = $illnessDetails;
@@ -14,23 +14,23 @@
       $this->reasonForXray = $reasonForXray;
     }
 
-    function getNic(){
+    public function getNic(){
       return $this->nic;
     }
 
-    function getData(){
+    public function getData(){
       return $this->data;
     }
 
-    function getIllnessDetails(){
+    public function getIllnessDetails(){
       return $this->illnessDetails;
     }
 
-    function getOther(){
+    public function getOther(){
       return $this->other;
     }
 
-    function getReasonForXray(){
+    public function getReasonForXray(){
       return $this->reasonForXray;
     }
   }

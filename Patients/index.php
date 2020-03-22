@@ -6,9 +6,9 @@
   </head>
   <body>
     <form action="index.php" method="post">
-        Officer: <input type="checkbox" name="type" value="forces"><br>
-        Soldier: <input type="checkbox" name="type" value="forces"><br>
-        Family: <input type="checkbox" name="type" value="family"><br>
+        Officer: <input type="radio" name="type" value="forces"><br>
+        Soldier: <input type="radio" name="type" value="forces"><br>
+        Family: <input type="radio" name="type" value="family"><br>
         <button type="submit" name="next">Next</button><br>
     </form>
     <?php

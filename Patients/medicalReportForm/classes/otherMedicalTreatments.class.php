@@ -5,26 +5,26 @@ class OtherMedicalTreatments{
   private $nameAndAddress;
   private $datePeriod;
 
-  function __construct($nic, $nature, $nameAndAddress, $datePeriod){
+  public function __construct($nic, $nature, $nameAndAddress, $datePeriod){
     $this->nic = $nic;
     $this->nature = $nature;
     $this->nameAndAddress = $nameAndAddress;
     $this->datePeriod = $datePeriod;
   }
 
-  function getNic(){
+  public function getNic(){
     return $this->nic;
   }
 
-  function getNature(){
+  public function getNature(){
     return $this->nature;
   }
 
-  function getNameAndAddress(){
+  public function getNameAndAddress(){
     return $this->nameAndAddress;
   }
 
-  function getDatePeriod(){
+  public function getDatePeriod(){
     return $this->datePeriod;
   }
 }

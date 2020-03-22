@@ -1,6 +1,7 @@
 <?php
     session_start();
     include_once "../../includes/class-autoload.inc.php";
+    $force_id = $_POST['force_id'];
     $nic = $_POST['nic'];
     $date = $_POST['date'];
     $bronchitis = array($_POST['bronchdata'], $_POST['bronchage']);
@@ -22,6 +23,7 @@
     $personalHistory = new PersonalHistory($nic, $data, $illnessDetails, $other, $xraydata);
     $serializedPersonalHistory = serialize($personalHistory);
 
+    $_SESSION['force_id'] = $force_id;
     $_SESSION['nic'] = $nic;
     $_SESSION['date'] = $date;
     $_SESSION['serializedPersonalHistory'] = $serializedPersonalHistory;

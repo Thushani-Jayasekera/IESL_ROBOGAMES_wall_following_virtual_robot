@@ -27,7 +27,7 @@
     private $abdomen;
     private $abnormalities; 
 
-    function __construct($eyesColor, $hairColor, $complextion, $height, $weight, $scars, $urAppearance, $urAlbumen, $urSugar, $urSpGravity, $physique, $guap, $skin, $eConditions, $heartSize, $sounds, $arterialWalls, $pulseRate, $bp, $respSystemInfo, $fullExpChest, $rangeOfExp, $centralNerveSys, $abdomen, $abnormalities){
+    public function __construct($eyesColor, $hairColor, $complextion, $height, $weight, $scars, $urAppearance, $urAlbumen, $urSugar, $urSpGravity, $physique, $guap, $skin, $eConditions, $heartSize, $sounds, $arterialWalls, $pulseRate, $bp, $respSystemInfo, $fullExpChest, $rangeOfExp, $centralNerveSys, $abdomen, $abnormalities){
       $this->eyesColor = $eyesColor;
       $this->hairColor = $hairColor;
       $this->complextion = $complextion;
@@ -56,7 +56,7 @@
 
     }
 
-    function getProperty($property){
+    public function getProperty($property){
       return $this->$property;
     }
   }

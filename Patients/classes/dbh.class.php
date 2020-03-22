@@ -1,10 +1,10 @@
 <?php
 
 class Dbh{
-  private $host = "localhost";
-  private $user = "root";
-  private $pwd = "root";
-  private $dbName = "patients";
+  private $host = "remotemysql.com";
+  private $user = "OXy65Ny57j";
+  private $pwd = "eYArF8fOJw";
+  private $dbName = "OXy65Ny57j";
 
   protected function connect(){
     $dsn = 'mysql:host='.$this->host.';dbname='.$this->dbName;

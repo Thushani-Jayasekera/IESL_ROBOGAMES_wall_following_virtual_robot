@@ -49,8 +49,8 @@
 
       <h3>(h) Respiratory System</h3><textarea rows = '3' cols = '60' name = 'respSystemInfo' ></textarea><br>
       <p><b>Chest Measurements (to nearest 1/2 inch)</b></p>
-      Full Expiration(Inches) : <input type="text" name="fullExpChest"><br>
-      Range of Expansion(Inches) : <input type="text" name="rangeOfExp"><br><br>
+      Full Expiration(Inches) : <input type="number" name="fullExpChest"><br>
+      Range of Expansion(Inches) : <input type="number" name="rangeOfExp"><br><br>
 
       <h3>(i) Central Nervous System</h3>
       <p>(Reflexes, tromors)</p>
@@ -77,7 +77,7 @@
       <p><b>If Married : </b></p>
       No. of Children : <input type="number" name="numChildren"><br>
       No. of Pregnancies : <input type="number" name="numPregs"><br>
-      Date of Last Confinement : <input type="number" name="dateLastConf"><br><br>
+      Date of Last Confinement : <input type="date" name="dateLastConf"><br><br>
 
 
       <button type="submit" name="next">Next</button>

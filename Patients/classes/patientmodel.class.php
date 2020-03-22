@@ -38,4 +38,10 @@ class PatientModel extends Dbh{
 
   }
 
+  protected function setMedicalRecord($force_id, $nic, $date, $serializedPersonalHistory, $serializedHospitalTreatments, $otherInfo, $summary, $serializedEyes, $serializedEarsNoseThroat, $serializedUpperLimbsLocomotion, $serializedPhysicalCapacityObject, $serializedMentalCapacity, $serializedForm10, $serializedSpecialistReportObject){
+    $sql = "INSERT INTO medical_report_info VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$force_id, $nic, $date, $serializedPersonalHistory, $serializedHospitalTreatments, $otherInfo, $summary, $serializedEyes, $serializedEarsNoseThroat, $serializedUpperLimbsLocomotion, $serializedPhysicalCapacityObject, $serializedMentalCapacity, $serializedForm10, $serializedSpecialistReportObject]);
+  }
+
 }

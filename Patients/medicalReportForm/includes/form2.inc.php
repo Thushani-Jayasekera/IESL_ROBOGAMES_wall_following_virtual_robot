@@ -10,7 +10,7 @@
     $hospitalTreatments = new HospitalTreatments($nic, $nature, $hospital, $inout, $dates);
     $serializedHospitalTreatments = serialize($hospitalTreatments);
 
-    $_SESSION['$erializedHospitalTreatments'] = $serializedHospitalTreatments;
+    $_SESSION['serializedHospitalTreatments'] = $serializedHospitalTreatments;
 
     header("Location: ../medicalReportForm3.php")
  ?>

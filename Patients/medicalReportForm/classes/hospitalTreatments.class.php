@@ -6,7 +6,7 @@ class HospitalTreatments{
   private $inout;
   private $dates;
 
-  function __construct($nic, $nature, $hospital, $inout, $dates){
+  public function __construct($nic, $nature, $hospital, $inout, $dates){
     $this->nic = $nic;
     $this->nature = $nature;
     $this->hospital = $hospital;
@@ -14,23 +14,23 @@ class HospitalTreatments{
     $this->dates = $dates;
   }
 
-  function getNic(){
+  public function getNic(){
     return $this->nic;
   }
 
-  function getNature(){
+  public function getNature(){
     return $this->nature;
   }
 
-  function getHospital(){
+  public function getHospital(){
     return $this->hospital;
   }
 
-  function getInout(){
+  public function getInout(){
     return $this->inout;
   }
 
-  function getDates(){
+  public function getDates(){
     return $this->dates;
   }
 }

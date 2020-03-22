@@ -2,10 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Medical Report </title>
+    <title>Medical Report</title>
   </head>
   <body>
     <form action="includes/form1.inc.php" method="post">
+      Service No : <input type="text" name="force_id" placeholder='Ex: s/xxxxx'>
       NIC: <input type="text" name="nic" placeholder='Ex: 97xxxxxxxv'>
       Date of admission: <input type="date" name="date">
       <h1>Personal History</h1>

@@ -51,11 +51,9 @@
 
   $serializedPhysicalCapacityObject = serialize($physicalCapacityObject);
 
-  echo $serializedPhysicalCapacityObject;
-
   $_SESSION['serializedPhysicalCapacityObject'] = $serializedPhysicalCapacityObject;
 
-  // header("Location: ../medicalReportForm9.php")
+  header("Location: ../medicalReportForm9.php")
 
 
 ?>
