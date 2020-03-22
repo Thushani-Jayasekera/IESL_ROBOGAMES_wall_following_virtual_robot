@@ -15,14 +15,14 @@ if(Input::exists()){
                 'required'=>true,
                 'min'=> 4,
                 'max'=>50
-                
+
             ),
             'user_pwd_new'=>array(
                 'name'=>'New Password',
                 'required'=>true,
                 'min'=>4,
                 'max'=>50,
-                
+
             ),
             'user_pwd_again'=>array(
                 'name'=>'Confirmation password',
@@ -30,10 +30,10 @@ if(Input::exists()){
                 'min'=>4,
                 'max'=>50,
                 'matches'=>'user_pwd_new'
-                
+
             )
 
-        )); 
+        ));
         if($validation->passed()){
             if(!Hash::verify(Input::get('user_pwd'),$user->data()->user_pwd)){
                 echo "Entered current password is wrong,pls reenter";
@@ -46,9 +46,9 @@ if(Input::exists()){
                 Redirect::to('index.php');
 
             }
-            
-            
-            
+
+
+
         }
         else{
             foreach($validation->errors()as $error){
