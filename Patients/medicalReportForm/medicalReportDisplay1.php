@@ -71,6 +71,8 @@
             break;
         }
       }
+    
+      $_SESSION['results'] = $results;
      ?>
 
      <form action="medicalReportDisplay2.php" method="post">
