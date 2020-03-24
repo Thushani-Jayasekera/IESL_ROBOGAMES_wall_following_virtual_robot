@@ -43,5 +43,14 @@ class PatientModel extends Dbh{
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute([$force_id, $nic, $date, $serializedPersonalHistory, $serializedHospitalTreatments, $otherInfo, $summary, $serializedEyes, $serializedEarsNoseThroat, $serializedUpperLimbsLocomotion, $serializedPhysicalCapacityObject, $serializedMentalCapacity, $serializedForm10, $serializedSpecialistReportObject]);
   }
+  
+  protected function getMedicalReport($force_id){
+    $sql = "SELECT * FROM medical_report_info WHERE force_id=?;";
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$force_id]);
+
+    $results = $stmt->fetchAll();
+    return $results;
+  }
 
 }
