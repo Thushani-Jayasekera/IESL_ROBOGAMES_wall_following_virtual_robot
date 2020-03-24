@@ -1,0 +1,49 @@
+/*Login and Register styling*/
+*{margin: 0; padding: 0;}
+        body{background-image:url('images/army-hospital.jpg'); background-size:cover;background-attachment:fixed; font-family: sans-serif;}
+        
+		.field{ width: 320px; background:#3e3d3d;opacity: 0.75; padding: 40px 20px; box-sizing: border-box; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 25px; border: 2px solid #3e3d3d; padding: 20px;}
+        h1{text-align: center; color: #fff; font-weight: thick; margin-bottom: 20px;}
+        
+        input{width: 100%; background: none; border: 1px solid #fff; border-radius: 3px; padding: 6px 15px; box-sizing: border-box; margin-bottom: 20px; font-size: 16px; color: #fff;}
+        
+		input[type="submit"]{ background:#a4b15c; border: 0; cursor: pointer; color: #3e3d3d;border-radius: 20px;}
+        input[type="submit"]:hover{ background: #a4b15c; transition: .6s;}
+        select{width: 100%; background: none; border: 1px solid #fff; border-radius: 3px; padding: 6px 15px; box-sizing: border-box; margin-bottom: 20px; font-size: 16px; color: #fff;}
+		::placeholder{color: #fff;}
+		
+
+		/*Remember me*/
+		.urm { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            height: px; 
+            width: 15px; 
+            background-color:white; 
+		} 
+		
+
+		.main { 
+            display: block; 
+            position: relative; 
+            padding-left: 45px; 
+            margin-bottom: 15px; 
+            cursor: pointer; 
+			font-size: 15px; 
+			
+		} 
+
+
+		.radios{
+			color: whitesmoke;
+		}
+		p{
+			text-align: center;
+			color: whitesmoke;
+			
+		}
+/*Register styling*/
+		.field-r{ width: 500px; height: 565px; background:#3e3d3d;opacity: 0.75; padding: 40px 20px; box-sizing: border-box; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 25px; border: 2px solid #3e3d3d; padding: 20px;}
+		
+		
