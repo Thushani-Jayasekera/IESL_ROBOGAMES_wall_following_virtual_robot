@@ -1,7 +1,8 @@
 body{
-    background-image:url('background.jpg');
+    background-image:url('army-hospital.jpg');
     background-size:cover;
     background-attachment:fixed;
+    font-family: sans-serif;
     
 }
 
@@ -18,15 +19,12 @@ h1{text-align: center;
     margin-bottom: 20px;}
 
 .field{ width: 320px;
-    border:blue 1px;
-    border-style: groove;
-    border-radius: 10px;
+    border-radius: 20px;
+    border: 1px solid #a4b15c;
     text-align: center;
-    background:#3e3d3d;
-     
+    background:#3e3d3d;  
     opacity: 0.75; 
     padding: 40px 20px;
-    box-sizing: border-box; 
     position: fixed; 
     left: 50%; top: 50%; 
     transform: translate(-50%, -50%);}
@@ -34,23 +32,21 @@ h1{text-align: center;
 
 button{
     width: 100%;
-    background: none; 
-    border: 1px solid #fff;
-    border-radius: 3px; 
+    border: 1px;
+    border-radius: 20px; 
     padding: 6px 15px; 
     box-sizing: border-box;
     margin-bottom: 20px; 
-    font-size: 16px; 
-    color: #fff;
+    font-size: 16px;
     background:#a4b15c;
-    border: 0; 
     cursor: pointer; 
-    color: #3e3d3d;
+    color:black;
+    font-weight: bold;
 
 }
 
 button:hover{
-    background: #a4b15c; 
+    background: #636941; 
     transition: .6s;
 
 }
