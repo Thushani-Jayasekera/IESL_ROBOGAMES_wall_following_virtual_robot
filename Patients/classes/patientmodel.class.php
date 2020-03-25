@@ -43,7 +43,7 @@ class PatientModel extends Dbh{
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute([$force_id, $nic, $date, $serializedPersonalHistory, $serializedHospitalTreatments, $otherInfo, $summary, $serializedEyes, $serializedEarsNoseThroat, $serializedUpperLimbsLocomotion, $serializedPhysicalCapacityObject, $serializedMentalCapacity, $serializedForm10, $serializedSpecialistReportObject]);
   }
-  
+
   protected function getMedicalReport($force_id){
     $sql = "SELECT * FROM medical_report_info WHERE force_id=?;";
     $stmt = $this->connect()->prepare($sql);
@@ -52,5 +52,46 @@ class PatientModel extends Dbh{
     $results = $stmt->fetchAll();
     return $results;
   }
+
+  protected function getPatientInfo($nic){
+    $sql = "SELECT * FROM forces_patients WHERE NIC=?;";
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$nic]);
+    $results = $stmt->fetchAll();
+    if(empty($results)){
+      $sql = "SELECT * FROM family_patients WHERE NIC=?;";
+      $stmt = $this->connect()->prepare($sql);
+      $stmt->execute([$nic]);
+      $results = $stmt->fetchAll();
+      $results['type'] = 'family';
+    }
+    if (empty($results['type'])){$results['type'] = 'force'; }
+    return $results;
+
+  }
+
+  protected function getCurrentVisit($nic){
+    $sql = "SELECT * FROM visits WHERE nic=? order by doa DESC LIMIT 1;";
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$nic]);
+    $results = $stmt->fetchAll();
+    return $results;
+  }
+
+  protected function getAllVisits($nic){
+    $sql = "SELECT * FROM visits WHERE nic=? order by doa DESC;";
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$nic]);
+    $results = $stmt->fetchAll();
+    return $results;
+  }
+
+  public function setNewDoctor($nic, $doctor, $doa){
+    $sql = "UPDATE visits SET doctor=? where nic=? AND doa=?;";
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$doctor,$nic, $doa]);
+
+  }
+
 
 }

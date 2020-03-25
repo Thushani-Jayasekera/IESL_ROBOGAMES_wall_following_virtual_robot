@@ -9,18 +9,17 @@
         $cm = $_POST["cm"];
         $doctor = $_POST["doctor"];
         $ward = $_POST["ward"];
-        
+
         if (empty($nic) || empty($doa) || empty($reason) ||  empty($history) || empty($doctor) || empty($ward)) {
           header("Location: ../newadmission.php?status=empty");
         } else {
-            if(!preg_match("/^[a-zA-Z]*$/", $doctor)){
+            if(!preg_match("/^[a-zA-Z\.]*$/", $doctor)){
                 header("Location: ../newadmission.php?status=char");
-            
+
         }else{
               $patientContrObject = new PatientContr();
               $patientContrObject-> createNewRecord($nic, $doa, $reason, $history, $cm, $doctor, $ward);
               header("Location: ../newadmission.php?status=success");
             }
         }
-    } 
-    
+    }

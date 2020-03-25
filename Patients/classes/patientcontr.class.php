@@ -16,4 +16,9 @@ class PatientContr extends PatientModel{
     $this->setMedicalRecord($force_id, $nic, $date, $serializedPersonalHistory, $serializedHospitalTreatments, $otherInfo, $summary, $serializedEyes, $serializedEarsNoseThroat, $serializedUpperLimbsLocomotion, $serializedPhysicalCapacityObject, $serializedMentalCapacity, $serializedForm10, $serializedSpecialistReportObject);
   }
 
+  public function changeDoctor($nic, $doctor, $doa){
+    $this->setNewDoctor($nic, $doctor, $doa);
+  }
+
+
 }
