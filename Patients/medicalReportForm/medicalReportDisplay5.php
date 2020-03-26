@@ -33,8 +33,12 @@
       <p><b>Diseases, etc : </b></p>
       '.$diseases.'<br><br><br>
 
-      <b>Effect on P. if any : </b> '.$effect.'<br>';
+      <b>Effect on P. if any : </b> '.$effect.'<br><br><br>';
 
      ?>
+
+     <form action="medicalReportDisplay6.php" method="post">
+       <button type="submit" name="next">Next</button>
+     </form>
   </body>
 </html>
