@@ -1,4 +1,5 @@
 <?php
+  session_start();
   include_once "../includes/class-autoload.inc.php";
   include_once "classes/personalHistory.class.php";
 ?>
@@ -11,12 +12,12 @@
   <body>
     <h1>Medical Report</h1>
     <?php
-      $force_id = "s/65445"; // should get this from a session SplObjectStorage
+      $nic = "982753195v"; // should get this from a session SplObjectStorage
 
       $patientViewObject = new PatientView();
-      $results = $patientViewObject->showMedicalReport($force_id);
+      $results = $patientViewObject->showMedicalReport($nic);
 
-      $nic = $results[0]['nic'];
+      $force_id = $results[0]['force_id'];
       $date = $results[0]['date'];
 
       echo "<h4>Service No : ".$force_id."</h4>";
@@ -71,7 +72,7 @@
             break;
         }
       }
-    
+
       $_SESSION['results'] = $results;
      ?>
 
