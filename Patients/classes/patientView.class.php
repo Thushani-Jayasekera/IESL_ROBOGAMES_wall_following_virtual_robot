@@ -1,7 +1,7 @@
 <?php
   class PatientView extends PatientModel{
-    public function showMedicalReport($force_id){
-      $results = $this->getMedicalReport($force_id);
+    public function showMedicalReport($nic){
+      $results = $this->getMedicalReport($nic);
       return $results;
     }
 
