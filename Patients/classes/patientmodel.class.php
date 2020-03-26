@@ -38,16 +38,16 @@ class PatientModel extends Dbh{
 
   }
 
-  protected function setMedicalRecord($force_id, $nic, $date, $serializedPersonalHistory, $serializedHospitalTreatments, $otherInfo, $summary, $serializedEyes, $serializedEarsNoseThroat, $serializedUpperLimbsLocomotion, $serializedPhysicalCapacityObject, $serializedMentalCapacity, $serializedForm10, $serializedSpecialistReportObject){
-    $sql = "INSERT INTO medical_report_info VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+  protected function setMedicalRecord($force_id, $nic, $date, $serializedPersonalHistory, $serializedHospitalTreatments, $serializedOtherMedicalTreatments, $otherInfo, $summary, $serializedEyes, $serializedEarsNoseThroat, $serializedUpperLimbsLocomotion, $serializedPhysicalCapacityObject, $serializedMentalCapacity, $serializedForm10, $serializedSpecialistReportObject){
+    $sql = "INSERT INTO medical_report_info VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
     $stmt = $this->connect()->prepare($sql);
-    $stmt->execute([$force_id, $nic, $date, $serializedPersonalHistory, $serializedHospitalTreatments, $otherInfo, $summary, $serializedEyes, $serializedEarsNoseThroat, $serializedUpperLimbsLocomotion, $serializedPhysicalCapacityObject, $serializedMentalCapacity, $serializedForm10, $serializedSpecialistReportObject]);
+    $stmt->execute([$force_id, $nic, $date, $serializedPersonalHistory, $serializedHospitalTreatments, $serializedOtherMedicalTreatments, $otherInfo, $summary, $serializedEyes, $serializedEarsNoseThroat, $serializedUpperLimbsLocomotion, $serializedPhysicalCapacityObject, $serializedMentalCapacity, $serializedForm10, $serializedSpecialistReportObject]);
   }
 
-  protected function getMedicalReport($force_id){
-    $sql = "SELECT * FROM medical_report_info WHERE force_id=?;";
+  protected function getMedicalReport($nic){
+    $sql = "SELECT * FROM medical_report_info WHERE nic=?;";
     $stmt = $this->connect()->prepare($sql);
-    $stmt->execute([$force_id]);
+    $stmt->execute([$nic]);
 
     $results = $stmt->fetchAll();
     return $results;
