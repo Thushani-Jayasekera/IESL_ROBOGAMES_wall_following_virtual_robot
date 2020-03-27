@@ -1,7 +1,7 @@
 <?php
     include_once "physicalCapacityFemale.class.php";
 
-    class PhysicalCapacityFemaleMarried extends physicalCapacityFemale{
+    class PhysicalCapacityFemaleMarried extends PhysicalCapacityFemale{
         private $numChildren;
         private $numPregs;
         private $dateLastConf;
