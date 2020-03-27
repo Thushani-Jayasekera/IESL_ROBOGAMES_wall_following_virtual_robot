@@ -13,11 +13,11 @@
             $this->dateLastConf = $dateLastConf;
         }
 
-        public function getProperty($property){
+        public function getPropertyFM($property){
             if ($property == 'numChildren' || $property == 'numPregs' || $property == 'dateLastConf'){
                 return $this->$property;
             }else{
-                parent::getProperty($property);
+                $this->getPropertyF($property);
             }
         }
     }
