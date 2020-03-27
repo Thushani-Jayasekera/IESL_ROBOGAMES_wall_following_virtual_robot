@@ -17,7 +17,7 @@ class UpperLimbsLocomotion{
       $this->locomotion = $locomotion;
       $this->effectUpperLimbs = $effectUpperLimbs;
       $this->l = $l;
-      $this->effect = $effectLocomotion;
+      $this-effectLocomotion = $effectLocomotion;
     }
 
     function getNic(){
