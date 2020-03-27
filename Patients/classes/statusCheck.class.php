@@ -6,16 +6,16 @@ class statusCheck{
         }else{
             $statusCheck = $_GET[$status];
             if ($statusCheck == "empty") {
-              echo "<p class='error'>You did not fill in all information.</p>";
+              echo "<p style = 'color: white;' class='error'>You did not fill in all information.</p>";
               exit();
             }elseif($statusCheck == "char"){
-              echo "<p class='error'>You used invalid characters.</p>";
+              echo "<p style = 'color: white;'style = 'color: white;' class='error'>You used invalid characters.</p>";
               exit();
             }elseif($statusCheck == "invalidemail"){
-              echo "<p class='error'>You used invalid e-mail.</p>";
+              echo "<p style = 'color: white;' class='error'>You used invalid e-mail.</p>";
               exit();
             }elseif($statusCheck == "success"){
-              echo "<p class='success'>Successful!</p>";
+              echo "<p style = 'color: white;' class='success'>Successful!</p>";
               exit();
             }
       }
