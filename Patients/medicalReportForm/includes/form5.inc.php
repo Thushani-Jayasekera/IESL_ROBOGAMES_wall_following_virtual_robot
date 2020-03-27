@@ -9,7 +9,7 @@
     $emptyRight = $_POST['emptyRight'];
     $emptyLeft = $_POST['emptyLeft'];
     $emptyCP = $_POST['emptyCP'];
-    $dieases = $_POST['dieases'];
+    $diseases = $_POST['diseases'];
     $effect = $_POST['effect'];
 
     $eyeTable = array("left" => $left, "right" => $right, "CP" => $CP, "emptyHeading" => $emptyHeading, "emptyLeft" => $emptyLeft, "emptyRight" => $emptyRight, "emptyCP" => $emptyCP);

@@ -16,7 +16,7 @@
     $lpresent = $_POST['lpresent'];
     $lremoved = $_POST['lremoved'];
 
-    $dieases = $_POST['dieases'];
+    $diseases = $_POST['diseases'];
     $h = $_POST['h'];
     $effect = $_POST['effect'];
 

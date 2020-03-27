@@ -13,11 +13,11 @@
             $this->maritalState = $maritalState;
         }
 
-        public function getProperty($property){
+        public function getPropertyF($property){
             if ($property == 'womenInfo' || $property == 'lmpDate' || $property == 'maritalState'){
                 return $this->$property;
             }else{
-                parent::getProperty($property);
+                $this->getProperty($property);
             }
         }
     }

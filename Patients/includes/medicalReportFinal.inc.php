@@ -7,6 +7,7 @@
   $date  = $_SESSION['date'];
   $serializedPersonalHistory  = $_SESSION['serializedPersonalHistory'];
   $serializedHospitalTreatments = $_SESSION['serializedHospitalTreatments'];
+  $serializedOtherMedicalTreatments = $_SESSION['serializedOtherMedicalTreatments'];
   $otherInfo = $_SESSION['otherInfo'];
   $summary = $_SESSION['summary'];
   $serializedEyes = $_SESSION['serializedEyes'];
@@ -18,7 +19,7 @@
   $serializedSpecialistReportObject = $_SESSION['serializedSpecialistReportObject'];
 
   $patientContrObject = new PatientContr();
-  $patientContrObject->createMedicalRecord($force_id, $nic, $date, $serializedPersonalHistory, $serializedHospitalTreatments, $otherInfo, $summary, $serializedEyes, $serializedEarsNoseThroat, $serializedUpperLimbsLocomotion, $serializedPhysicalCapacityObject, $serializedMentalCapacity, $serializedForm10, $serializedSpecialistReportObject);
+  $patientContrObject->createMedicalRecord($force_id, $nic, $date, $serializedPersonalHistory, $serializedHospitalTreatments, $serializedOtherMedicalTreatments, $otherInfo, $summary, $serializedEyes, $serializedEarsNoseThroat, $serializedUpperLimbsLocomotion, $serializedPhysicalCapacityObject, $serializedMentalCapacity, $serializedForm10, $serializedSpecialistReportObject);
 
   echo "Successful";
 

@@ -1,7 +1,7 @@
 <?php
     include_once "physicalCapacityFemale.class.php";
 
-    class PhysicalCapacityFemaleMarried extends physicalCapacityFemale{
+    class PhysicalCapacityFemaleMarried extends PhysicalCapacityFemale{
         private $numChildren;
         private $numPregs;
         private $dateLastConf;
@@ -13,11 +13,11 @@
             $this->dateLastConf = $dateLastConf;
         }
 
-        public function getProperty($property){
+        public function getPropertyFM($property){
             if ($property == 'numChildren' || $property == 'numPregs' || $property == 'dateLastConf'){
                 return $this->$property;
             }else{
-                parent::getProperty($property);
+                $this->getPropertyF($property);
             }
         }
     }
