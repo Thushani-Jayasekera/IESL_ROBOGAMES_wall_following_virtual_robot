@@ -1,6 +1,5 @@
 body{
-  background-image:url('../../army-hospital.jpg');
-  /* background-color: blue; */
+  background-image:url('../../stylesheets/army-hospital.jpg');
   background-size:cover;
   background-attachment:fixed;
   font-family: sans-serif;
@@ -14,15 +13,16 @@ body{
   position: relative;
   top:70px;
   padding: 50px;
-  opacity:0.75;
- border-radius: 30px;
+  opacity: 0.9;
+  border-radius: 30px;
+  color: whitesmoke;
 
 }
 #form-1{
   width: 25%;
 }
 
-input{
+input, textarea{
   background: none;
   display:inline-block;
   width:100%;
@@ -57,7 +57,7 @@ button:hover{
 ::placeholder{color: #fff;}
 
 header{
-  
+
   margin:auto;
   text-align: center;
   padding: 30px;

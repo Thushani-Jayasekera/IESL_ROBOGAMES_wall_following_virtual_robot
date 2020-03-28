@@ -16,7 +16,7 @@
     <h2>Registration for patients of family members of military personnel</h2>
   </header>
 
-    <div class="form">
+  <div class="form">
 
   <form action="includes/familypatientsignup.inc.php" method="post">
     <div class="form-group">

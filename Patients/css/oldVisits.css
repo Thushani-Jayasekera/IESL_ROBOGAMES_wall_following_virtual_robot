@@ -1,0 +1,33 @@
+@import "signup.css";
+.content-table{
+  border-collapse: collapse;
+  margin: 25px auto;
+  min-width: 800px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+}
+
+.content-table thead tr{
+  background-color: whitesmoke;
+  color: black;
+  text-align: left;
+   font-weight: bold;
+   border: 1px solid white;
+
+}
+
+.content-table th, .content-table td{
+  padding: 12px 15px;
+
+}
+
+.content-table tbody tr{
+  border: 1px solid white;
+}
+
+.content-table tbody tr:nth-of-type(even){
+  background-color: grey;
+}
+.content-table tbody tr:hover{
+  font-weight: bold;
+  color: #FFF8DC;
