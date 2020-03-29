@@ -8,8 +8,8 @@ class UpperLimbsLocomotion{
     private $locomotion;
     private $l;
     private $effectLocomotion;
-   
-    
+
+
     function __construct($nic, $upperLimbs, $u, $locomotion, $effectUpperLimbs, $l, $effectLocomotion){
       $this->nic = $nic;
       $this->upperLimbs = $upperLimbs;
@@ -17,7 +17,7 @@ class UpperLimbsLocomotion{
       $this->locomotion = $locomotion;
       $this->effectUpperLimbs = $effectUpperLimbs;
       $this->l = $l;
-      $this-effectLocomotion = $effectLocomotion;
+      $this->effectLocomotion = $effectLocomotion;
     }
 
     function getNic(){
@@ -33,7 +33,7 @@ class UpperLimbsLocomotion{
 
     function getLocomotion(){
         return $this->locomotion;
-    }     
+    }
     function getEffectUpperLimbs(){
       return $this->effectUpperLimbs;
     }
@@ -46,5 +46,3 @@ class UpperLimbsLocomotion{
 
   }
  ?>
-
-

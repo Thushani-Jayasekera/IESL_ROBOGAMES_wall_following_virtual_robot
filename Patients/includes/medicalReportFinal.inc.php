@@ -1,3 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/medicalReportForm.css">
+  </head>
+  <body>
+    <div class="form">
+      <h2>Successful!</h2>
+
+      <a href="../patientProfile.php">Back to patient profile</a>
+
+    </div>
+  </body>
+</html>
 <?php
   session_start();
   include_once "class-autoload.inc.php";
@@ -21,6 +38,5 @@
   $patientContrObject = new PatientContr();
   $patientContrObject->createMedicalRecord($force_id, $nic, $date, $serializedPersonalHistory, $serializedHospitalTreatments, $serializedOtherMedicalTreatments, $otherInfo, $summary, $serializedEyes, $serializedEarsNoseThroat, $serializedUpperLimbsLocomotion, $serializedPhysicalCapacityObject, $serializedMentalCapacity, $serializedForm10, $serializedSpecialistReportObject);
 
-  echo "Successful";
 
 ?>
