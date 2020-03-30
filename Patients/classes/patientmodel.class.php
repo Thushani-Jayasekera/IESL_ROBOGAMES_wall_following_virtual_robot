@@ -1,10 +1,10 @@
 <?php
 
 class PatientModel extends Dbh{
-  protected function setForcesPatient($force, $first, $last, $nic, $force_id, $regiment, $rank, $email, $dob, $height, $weight, $address, $mobile){
-    $sql = "INSERT INTO forces_patients VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?);";
+  protected function setForcesPatient($force, $first, $last, $nic, $force_id, $gender, $regiment, $rank, $email, $dob, $height, $weight, $address, $mobile){
+    $sql = "INSERT INTO forces_patients VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
     $stmt = $this->connect()->prepare($sql);
-    $stmt->execute([$force_id ,$force, $first, $last, $nic, $regiment, $rank, $email, $dob, $height, $weight, $address, $mobile]);
+    $stmt->execute([$force_id ,$force, $first, $last, $nic, $gender, $regiment, $rank, $email, $dob, $height, $weight, $address, $mobile]);
   }
 
   protected function setFamilyPatient($force_id, $force, $relation, $first, $last, $nic, $email, $dob, $height, $weight, $address, $mobile){
