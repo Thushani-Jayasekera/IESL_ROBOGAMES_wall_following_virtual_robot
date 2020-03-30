@@ -11,7 +11,7 @@ class PatientModel extends Dbh{
     $sql = "INSERT INTO family_patients VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?);";
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute([$force_id, $force, $relation, $first, $last, $nic, $gender, $email, $dob, $height, $weight, $address, $mobile]);
-    
+
   }
 
   protected function setNewRecord($nic, $doa, $reason, $history, $cm, $doctor, $ward){
@@ -86,12 +86,38 @@ class PatientModel extends Dbh{
     return $results;
   }
 
-  public function setNewDoctor($nic, $doctor, $doa){
+  protected function setNewDoctor($nic, $doctor, $doa){
     $sql = "UPDATE visits SET doctor=? where nic=? AND doa=?;";
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute([$doctor,$nic, $doa]);
 
   }
 
+  protected function setPrescription($nic, $doa, $prescription){
+    $sql = "UPDATE visits SET Prescription=?, prescription_issued= 'Not issued' WHERE nic=? AND doa=?;";
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$prescription, $nic, $doa]);
+  }
+
+  protected function getCurrentPrescription($nic, $doa){
+    $sql = "SELECT Prescription FROM visits WHERE nic=? AND doa=? AND prescription_issued='Not issued' ORDER BY doa;";
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$nic, $doa]);
+    $results = $stmt->fetchAll();
+    return $results;
+  }
+
+  protected function getAllPrescriptions($nic){
+    $sql = "SELECT doa, Prescription FROM visits WHERE nic=? AND prescription_issued='Issued' ORDER BY doa DESC;";
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$nic]);
+    $results = $stmt->fetchAll();
+    return $results;
+  }
+  public function setIssued($prescription){
+    $sql = "UPDATE visits SET prescription_issued= 'Issued' WHERE Prescription=?;";
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$prescription]);
+  }
 
 }

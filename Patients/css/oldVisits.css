@@ -25,9 +25,15 @@
   border: 1px solid white;
 }
 
+
 .content-table tbody tr:nth-of-type(even){
   background-color: grey;
 }
 .content-table tbody tr:hover{
   font-weight: bold;
   color: #FFF8DC;
+}
+#prescription-table{
+  overflow: auto;
+
+}

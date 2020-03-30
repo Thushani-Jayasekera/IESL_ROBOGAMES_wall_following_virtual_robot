@@ -20,5 +20,13 @@ class PatientContr extends PatientModel{
     $this->setNewDoctor($nic, $doctor, $doa);
   }
 
+  public function addPrescription($nic, $doa, $prescription){
+    $this->setPrescription($nic, $doa, $prescription);
+  }
+
+  public function issue($prescription){
+    $this->setIssued($prescription);
+  }
+
 
 }

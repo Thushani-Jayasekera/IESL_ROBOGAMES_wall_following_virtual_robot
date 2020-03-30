@@ -1,5 +1,6 @@
 <?php
   include_once "includes/class-autoload.inc.php";
+  session_start();
 
  ?>
 
@@ -27,7 +28,7 @@
       <tbody>
 
         <?php
-        $nic = '123703702V'; //'$_SESSION['nic']';
+        $nic = $_SESSION['nic'];
         $patientView = new PatientView();
         $results = $patientView->showAllVisits($nic);
 

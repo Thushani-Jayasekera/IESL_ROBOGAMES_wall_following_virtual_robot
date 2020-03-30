@@ -79,3 +79,10 @@ h2{
 .form-check{
   align-content: center;
 }
+
+h5{
+  color: whitesmoke;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
