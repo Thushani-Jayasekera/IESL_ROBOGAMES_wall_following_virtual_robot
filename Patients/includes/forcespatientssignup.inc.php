@@ -7,6 +7,7 @@
         $last = $_POST["last"];
         $nic= $_POST["nic"];
         $force_id = $_POST["force_id"];
+        $gender = $_POST['gender'];
         $regiment = $_POST["regiment"];
         $rank = $_POST["rank"];
         $email = $_POST["email"];
@@ -15,7 +16,7 @@
         $weight = $_POST["weight"];
         $address = $_POST["address"];
         $mobile = $_POST["mobile"];
-        if (empty($force) || empty($first) || empty($last) || empty($nic) || empty($force_id) || empty($regiment) || empty($rank) || empty($email) || empty($dob) || empty($height) || empty($weight) || empty($address) || empty($mobile)) {
+        if (empty($force) || empty($first) || empty($last) || empty($nic) || empty($force_id) || empty($gender) || empty($regiment) || empty($rank) || empty($email) || empty($dob) || empty($height) || empty($weight) || empty($address) || empty($mobile)) {
           header("Location: ../forcespatientsignup.php?signup=empty");
         } else {
           if(!preg_match("/^[a-zA-Z]*$/", $force) || !preg_match("/^[a-zA-Z]*$/", $first) || !preg_match("/^[a-zA-Z]*$/", $last) || !preg_match("/^[a-zA-Z]*$/", $regiment) || !preg_match("/^[a-zA-Z]*$/", $rank)){
@@ -25,7 +26,7 @@
               header("Location: ../forcespatientsignup.php?signup=invalidemail");
             }else{
               $patientContrObject = new PatientContr();
-              $patientContrObject->createForcesPatient($force, $first, $last, $nic, $force_id, $regiment, $rank, $email, $dob, $height, $weight, $address, $mobile);
+              $patientContrObject->createForcesPatient($force, $first, $last, $nic, $force_id, $gender, $regiment, $rank, $email, $dob, $height, $weight, $address, $mobile);
               header("Location: ../forcespatientsignup.php?signup=success");
             }
           }
