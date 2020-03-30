@@ -73,9 +73,17 @@
       </div>
       </div>
       </div>
+
       <div class="form-group">
-        <input id='last-input' type="text" name="mobile" placeholder="Mobile"><br>
-      </div>
+        <div class="form-row">
+        <div class="col">
+        <input type="text" name="mobile" placeholder="Mobile"><br>
+    </div>
+    <div class="col">
+      <input type="text" name="gender" placeholder="Gender"><br>
+    </div>
+    </div>
+  </div>
 
 
         <button type="submit" name="submit">Register</button><br>

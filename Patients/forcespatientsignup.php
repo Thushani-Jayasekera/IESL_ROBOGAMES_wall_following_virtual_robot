@@ -84,8 +84,10 @@
     <div class="form-group">
       <div class="form-row">
       <div class="col">
-        <input id='last-input' type="text" name="mobile" placeholder="Mobile"><br>
-
+        <input type="text" name="mobile" placeholder="Mobile"><br>
+      </div>
+      <div class="col">
+        <input type="text" name="gender" placeholder="Gender"><br>
       </div>
       </div>
     </div>

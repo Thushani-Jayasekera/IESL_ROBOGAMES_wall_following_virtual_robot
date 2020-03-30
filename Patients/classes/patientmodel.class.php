@@ -7,11 +7,11 @@ class PatientModel extends Dbh{
     $stmt->execute([$force_id ,$force, $first, $last, $nic, $gender, $regiment, $rank, $email, $dob, $height, $weight, $address, $mobile]);
   }
 
-  protected function setFamilyPatient($force_id, $force, $relation, $first, $last, $nic, $email, $dob, $height, $weight, $address, $mobile){
-    $sql = "INSERT INTO family_patients VALUES(?,?,?,?,?,?,?,?,?,?,?,?);";
+  protected function setFamilyPatient($force_id, $force, $relation, $first, $last, $nic, $gender, $email, $dob, $height, $weight, $address, $mobile){
+    $sql = "INSERT INTO family_patients VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?);";
     $stmt = $this->connect()->prepare($sql);
-    $stmt->execute([$force_id, $force, $relation, $first, $last, $nic, $email, $dob, $height, $weight, $address, $mobile]);
-
+    $stmt->execute([$force_id, $force, $relation, $first, $last, $nic, $gender, $email, $dob, $height, $weight, $address, $mobile]);
+    
   }
 
   protected function setNewRecord($nic, $doa, $reason, $history, $cm, $doctor, $ward){
