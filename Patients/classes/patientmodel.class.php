@@ -99,10 +99,10 @@ class PatientModel extends Dbh{
     $stmt->execute([$prescription, $nic, $doa]);
   }
 
-  protected function getCurrentPrescription($nic, $doa){
-    $sql = "SELECT Prescription FROM visits WHERE nic=? AND doa=? AND prescription_issued='Not issued' ORDER BY doa;";
+  protected function getCurrentPrescription($nic){
+    $sql = "SELECT doa, Prescription FROM visits WHERE nic=? AND prescription_issued='Not issued' ORDER BY doa;";
     $stmt = $this->connect()->prepare($sql);
-    $stmt->execute([$nic, $doa]);
+    $stmt->execute([$nic]);
     $results = $stmt->fetchAll();
     return $results;
   }

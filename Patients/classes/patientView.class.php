@@ -20,8 +20,8 @@
       return $results;
     }
 
-    public function showCurrentPrescription($nic, $doa){
-      $results = $this->getCurrentPrescription($nic, $doa);
+    public function showCurrentPrescription($nic){
+      $results = $this->getCurrentPrescription($nic);
       return $results;
     }
 
@@ -30,6 +30,6 @@
       return $results;
     }
 
-    
+
   }
  ?>

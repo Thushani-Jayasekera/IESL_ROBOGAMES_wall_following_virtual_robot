@@ -2,9 +2,9 @@
   include_once "includes/class-autoload.inc.php";
   session_start();
   $nic = $_SESSION['nic'];
-  $doa = $_SESSION['doa'];
+  // $doa = $_SESSION['doa'];
   $patientObj = new PatientView();
-  $currentPrescription = $patientObj->showCurrentPrescription($nic, $doa);
+  $currentPrescription = $patientObj->showCurrentPrescription($nic);
   $allPrescriptions = $patientObj->showAllPrescriptions($nic);
 
 
@@ -42,12 +42,16 @@
               </tr>
             </thead>
             <tbody>";
+          $x = 0;
         foreach($currentPrescription as $result){
           $prescriptionObj = unserialize($result['Prescription']);
-          $_SESSION['prescription'] = $result['Prescription'];
+          $_SESSION['prescription-'.$x] = $result['Prescription'];
           $prescription = $prescriptionObj->getPrescription();
-          echo "<tr><td>$doa</td><td>$prescription</td><td><button type='submit'>Issue</button></td></tr>";
+          $date = $result['doa'];
+          echo "<tr><td>$date</td><td>$prescription</td><td><button type='submit' name='button-".$x."'>Issue</button></td></tr>";
+          $x++;
         }
+        $_SESSION['x'] = $x;
       }
 
         ?>
