@@ -1,4 +1,7 @@
 <?php
+
+  include_once "patientmodel.class.php";
+
   class PatientView extends PatientModel{
     public function showMedicalReport($nic){
       $results = $this->getMedicalReport($nic);
@@ -27,6 +30,11 @@
 
     public function showAllPrescriptions($nic){
       $results = $this->getAllPrescriptions($nic);
+      return $results;
+    }
+    
+    public function showLabTestsRequests($nic){
+      $results = $this->getLabTestsRequests($nic);
       return $results;
     }
 
