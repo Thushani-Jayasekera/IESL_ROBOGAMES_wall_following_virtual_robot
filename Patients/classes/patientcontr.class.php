@@ -1,5 +1,7 @@
 <?php
 
+include_once "patientmodel.class.php";
+
 class PatientContr extends PatientModel{
   public function createForcesPatient($force, $first, $last, $nic, $force_id, $gender, $regiment, $rank, $email, $dob, $height, $weight, $address, $mobile){
     $this->setForcesPatient($force, $first, $last, $nic, $force_id, $gender, $regiment, $rank, $email, $dob, $height, $weight, $address, $mobile);
@@ -26,6 +28,10 @@ class PatientContr extends PatientModel{
 
   public function issue($prescription){
     $this->setIssued($prescription);
+  }
+  
+  public function createLabTestsRequests($nic, $serializedBasicECGRequest){
+    $this->setLabTestsRequests($nic, $serializedBasicECGRequest);
   }
 
 
