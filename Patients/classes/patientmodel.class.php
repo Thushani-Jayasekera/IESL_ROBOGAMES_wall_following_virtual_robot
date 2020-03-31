@@ -1,4 +1,5 @@
 <?php
+ include_once "dbh.class.php";
 
 class PatientModel extends Dbh{
   protected function setForcesPatient($force, $first, $last, $nic, $force_id, $gender, $regiment, $rank, $email, $dob, $height, $weight, $address, $mobile){
@@ -118,6 +119,31 @@ class PatientModel extends Dbh{
     $sql = "UPDATE visits SET prescription_issued= 'Issued' WHERE Prescription=?;";
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute([$prescription]);
+  }
+  
+  public function getLabTestsRequests($nic){
+    $sql = "SELECT * FROM lab_tests_requests WHERE nic=?;";
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$nic]);
+
+    $results = $stmt->fetchAll();
+    return $results;
+  }
+
+  public function setLabTestsRequests($nic, $serializedBasicECGRequest){
+    $results = $this->getLabTestsRequests($nic);
+
+    if (empty($results)) {
+      $sql = "INSERT INTO lab_tests_requests(nic, serializedBasicECGRequest) VALUES(?,?);";
+      $stmt = $this->connect()->prepare($sql);
+      $stmt->execute([$nic, $serializedBasicECGRequest]);
+
+    }else{
+      $sql = "UPDATE lab_tests_requests SET serializedBasicECGRequest = ? WHERE nic = ?;";
+      $stmt = $this->connect()->prepare($sql);
+      $stmt->execute([$serializedBasicECGRequest, $nic]);
+
+    }
   }
 
 }
