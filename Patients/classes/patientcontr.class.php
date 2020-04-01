@@ -29,10 +29,14 @@ class PatientContr extends PatientModel{
   public function issue($prescription){
     $this->setIssued($prescription);
   }
-  
+
   public function createLabTestsRequests($nic, $serializedBasicECGRequest){
     $this->setLabTestsRequests($nic, $serializedBasicECGRequest);
   }
+  public function addDischarge($nic, $doa, $dischargeDate, $summary){
+    $this->setDischarge($nic, $doa, $dischargeDate, $summary);
+  }
+
 
 
 }

@@ -91,11 +91,12 @@
         $cm = $visitInfo[0]['cm'];
         $doctor = $visitInfo[0]['doctor'];
         $ward = $visitInfo[0]['ward'];
-        echo "<h2> Current Visit </h2>
+        $discharged = $visitInfo[0]['Discharged'];
+        echo "<h2> Latest Visit </h2>
         <table border='1'>
-          <tr> <th>Date of Admission</th><th>Reason for admission</th><th>Medical History</th><th>Current medications</th><th>Doctor</th><th>Ward</th></tr>
+          <tr> <th>Date of Admission</th><th>Reason for admission</th><th>Medical History</th><th>Current medications</th><th>Doctor</th><th>Ward</th><th>Discharged</th></tr>
           <tr>
-            <td>$doa</td><td>$reason</td><td>$history</td><td>$cm</td><td>$doctor</td><td>$ward</td>
+            <td>$doa</td><td>$reason</td><td>$history</td><td>$cm</td><td>$doctor</td><td>$ward</td><td>$discharged</td>
           </tr>
 
         </table>";
@@ -108,7 +109,7 @@
     </div>
 
     <div class="newDoctor">
-      <h2>Chane Doctor</h2>
+      <h2>Change Doctor</h2>
 
     <form action="includes/newDoctor.inc.php" method="post">
       <p>Enter new Doctor's name</p>
@@ -120,6 +121,7 @@
   <a href="medicalReportForm/medicalReportDisplay1.php"> Medical Report</a>
   <a href="drugIssueRequest.php">Issue Prescription</a>
   <a href="viewPrescription.php">Prescriptions</a>
+  <a href="dischargeForm.php">Discharge Form</a>
   <!-- Add links to prescription history, lab report history, issue drug request, discharge form -->
 
 

@@ -1,7 +1,7 @@
 <?php
   session_start();
   include_once 'class-autoload.inc.php';
-  $nic = $_SESSION['nic']; //'123703702V'; 
+  $nic = $_SESSION['nic']; //'123703702V';
   $doa =$_SESSION['doa'];
   $prescription = $_POST['prescription'];
 

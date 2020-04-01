@@ -23,7 +23,7 @@
      <table class='content-table' border='1'>
        <thead>
 
-       <tr> <th>Date of Admission</th><th>Reason for admission</th><th>Medical History</th><th>Current medications</th><th>Doctor</th><th>Ward</th></tr>
+       <tr> <th>Date of Admission</th><th>Reason for admission</th><th>Medical History</th><th>Current medications</th><th>Doctor</th><th>Ward</th><th>Date of Discharge</th><th>Summary upon Discharge</th></tr>
       </thead>
       <tbody>
 
@@ -39,8 +39,10 @@
           $cm = $result['cm'];
           $doctor = $result['doctor'];
           $ward = $result['ward'];
+          $dischargeDate = $result['discharge_date'];
+          $dischargeSummary = $result['discharge_summary'];
           echo "<tr>
-            <td>$doa</td><td>$reason</td><td>$history</td><td>$cm</td><td>$doctor</td><td>$ward</td>
+            <td>$doa</td><td>$reason</td><td>$history</td><td>$cm</td><td>$doctor</td><td>$ward</td><td>$dischargeDate</td><td>$dischargeSummary</td>
           </tr>";
         }
       ?>

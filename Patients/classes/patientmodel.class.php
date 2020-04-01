@@ -95,13 +95,13 @@ class PatientModel extends Dbh{
   }
 
   protected function setPrescription($nic, $doa, $prescription){
-    $sql = "UPDATE visits SET Prescription=?, prescription_issued= 'Not issued' WHERE nic=? AND doa=?;";
+    $sql = "INSERT INTO prescriptions VALUES (?,?,?, 'Not issued');";
     $stmt = $this->connect()->prepare($sql);
-    $stmt->execute([$prescription, $nic, $doa]);
+    $stmt->execute([ $prescription,$nic, $doa]);
   }
 
   protected function getCurrentPrescription($nic){
-    $sql = "SELECT doa, Prescription FROM visits WHERE nic=? AND prescription_issued='Not issued' ORDER BY doa;";
+    $sql = "SELECT doa, Prescription FROM prescriptions WHERE nic=? AND prescription_issued='Not issued' ORDER BY doa;";
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute([$nic]);
     $results = $stmt->fetchAll();
@@ -109,18 +109,18 @@ class PatientModel extends Dbh{
   }
 
   protected function getAllPrescriptions($nic){
-    $sql = "SELECT doa, Prescription FROM visits WHERE nic=? AND prescription_issued='Issued' ORDER BY doa DESC;";
+    $sql = "SELECT doa, Prescription FROM prescriptions WHERE nic=? AND prescription_issued='Issued' ORDER BY doa DESC;";
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute([$nic]);
     $results = $stmt->fetchAll();
     return $results;
   }
   public function setIssued($prescription){
-    $sql = "UPDATE visits SET prescription_issued= 'Issued' WHERE Prescription=?;";
+    $sql = "UPDATE prescriptions SET prescription_issued= 'Issued' WHERE Prescription=?;";
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute([$prescription]);
   }
-  
+
   public function getLabTestsRequests($nic){
     $sql = "SELECT * FROM lab_tests_requests WHERE nic=?;";
     $stmt = $this->connect()->prepare($sql);
@@ -144,6 +144,12 @@ class PatientModel extends Dbh{
       $stmt->execute([$serializedBasicECGRequest, $nic]);
 
     }
+  }
+
+  protected function setDischarge($nic, $doa, $dischargeDate, $summary){
+    $sql = "UPDATE visits SET discharge_date=?, discharge_summary=?, Discharged='Yes' WHERE nic=? AND doa=?;";
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$dischargeDate, $summary, $nic, $doa]);
   }
 
 }
