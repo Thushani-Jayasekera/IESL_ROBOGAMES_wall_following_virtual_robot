@@ -41,7 +41,7 @@
 
       <b>Ward No : </b><input type="number" name="ward_no"><br><br>
 
-      <b>Blood Pressure : </b><input type="nu,number" name="bp"><br><br>
+      <b>Blood Pressure : </b><input type="number" name="bp"><br><br>
 
       <?php
         $dob = $patientInfo['date_of_birth'];
