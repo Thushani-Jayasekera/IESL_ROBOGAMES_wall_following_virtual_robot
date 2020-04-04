@@ -26,7 +26,7 @@
 
   $patientContrObject = new PatientContr();
 
-  $patientContrObject->createLabTestsRequests($nic, $serializedBasicECGRequest);
+  $patientContrObject->createBasicECGRequest($nic, $serializedBasicECGRequest);
 
   echo "successful!";
 ?>
