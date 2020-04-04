@@ -130,7 +130,7 @@ class PatientModel extends Dbh{
     return $results;
   }
 
-  public function setLabTestsRequests($nic, $serializedBasicECGRequest){
+  public function setBasicECGRequest($nic, $serializedBasicECGRequest){
     $results = $this->getLabTestsRequests($nic);
 
     if (empty($results)) {
@@ -142,6 +142,22 @@ class PatientModel extends Dbh{
       $sql = "UPDATE lab_tests_requests SET serializedBasicECGRequest = ? WHERE nic = ?;";
       $stmt = $this->connect()->prepare($sql);
       $stmt->execute([$serializedBasicECGRequest, $nic]);
+
+    }
+  }
+
+  public function setABPMonitoringRequest($nic, $serializedABPMonitoringRequest){
+    $results = $this->getLabTestsRequests($nic);
+
+    if (empty($results)) {
+      $sql = "INSERT INTO lab_tests_requests(nic, serializedABPMonitoringRequest) VALUES(?,?);";
+      $stmt = $this->connect()->prepare($sql);
+      $stmt->execute([$nic, $serializedABPMonitoringRequest]);
+
+    }else{
+      $sql = "UPDATE lab_tests_requests SET serializedABPMonitoringRequest = ? WHERE nic = ?;";
+      $stmt = $this->connect()->prepare($sql);
+      $stmt->execute([$serializedABPMonitoringRequest, $nic]);
 
     }
   }
