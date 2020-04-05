@@ -32,6 +32,15 @@ if(!$user_uid=Input::get('user')){
     
     
     ?>
+    <link rel="stylesheet" href="stylesheets/searchbarStyle.css">
+    <div class="searchbar">
+        
+        <form class="form-wrapper" action="searchbar.php" method="post">
+            <h3 class="view"> VIEW PATIENT PROFILE</h3>
+            <input type="text" id="search" placeholder="Enter Patient's NIC Number" name="search">
+            <input type="submit" id="submit" name="submit" class="submit"> 
+        </form>
+    </div>
 
 
     
