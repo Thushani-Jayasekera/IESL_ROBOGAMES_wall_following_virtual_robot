@@ -177,6 +177,22 @@ class PatientModel extends Dbh{
 
     }
   }
+ 
+ protected function setHistopathologyRequest($nic, $serializedHistopathologyRequest){
+    $results = $this->getLabTestsRequests($nic);
+
+    if (empty($results)) {
+      $sql = "INSERT INTO lab_tests_requests(nic, serializedHistopathologyRequest) VALUES(?,?);";
+      $stmt = $this->connect()->prepare($sql);
+      $stmt->execute([$nic, $serializedHistopathologyRequest]);
+
+    }else{
+      $sql = "UPDATE lab_tests_requests SET serializedHistopathologyRequest = ? WHERE nic = ?;";
+      $stmt = $this->connect()->prepare($sql);
+      $stmt->execute([$serializedHistopathologyRequest, $nic]);
+
+    }
+  }
 
   protected function setDischarge($nic, $doa, $dischargeDate, $summary){
     $sql = "UPDATE visits SET discharge_date=?, discharge_summary=?, Discharged='Yes' WHERE nic=? AND doa=?;";
