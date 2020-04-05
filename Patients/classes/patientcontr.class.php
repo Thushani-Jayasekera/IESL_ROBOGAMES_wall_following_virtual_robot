@@ -42,6 +42,10 @@ class PatientContr extends PatientModel{
     $this->setHolterMonitoringRequest($nic, $serializedHolterMonitoringRequest);
   }
   
+  public function createHistopathologyRequest($nic, $serializedHistopathologyRequest){
+    $this->setHistopathologyRequest($nic, $serializedHistopathologyRequest);
+  }
+  
   public function addDischarge($nic, $doa, $dischargeDate, $summary){
     $this->setDischarge($nic, $doa, $dischargeDate, $summary);
   }
