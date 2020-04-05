@@ -14,7 +14,7 @@
     <div class="info">
       <h2>Patient Information</h2>
       <?php
-        $nic = '123703702V'; //'$_SESSION['nic']';
+        $nic =$_SESSION['nic'];
         $_SESSION['nic'] = $nic;
         $patientView = new PatientView();
         $results = $patientView->showPatientInfo($nic);
