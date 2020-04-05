@@ -42,6 +42,8 @@ class PatientContr extends PatientModel{
     $this->setDischarge($nic, $doa, $dischargeDate, $summary);
   }
 
-
+  public function createHolterMonitoringRequest($nic, $serializedHolterMonitoringRequest){
+    $this->setHolterMonitoringRequest($nic, $serializedHolterMonitoringRequest);
+  }
 
 }
