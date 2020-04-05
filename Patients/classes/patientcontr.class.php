@@ -38,12 +38,12 @@ class PatientContr extends PatientModel{
     $this->setABPMonitoringRequest($nic, $serializedABPMonitoringRequest);
   }
   
-  public function addDischarge($nic, $doa, $dischargeDate, $summary){
-    $this->setDischarge($nic, $doa, $dischargeDate, $summary);
-  }
-
   public function createHolterMonitoringRequest($nic, $serializedHolterMonitoringRequest){
     $this->setHolterMonitoringRequest($nic, $serializedHolterMonitoringRequest);
+  }
+  
+  public function addDischarge($nic, $doa, $dischargeDate, $summary){
+    $this->setDischarge($nic, $doa, $dischargeDate, $summary);
   }
 
 }
