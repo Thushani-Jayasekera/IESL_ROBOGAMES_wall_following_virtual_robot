@@ -121,7 +121,7 @@ class PatientModel extends Dbh{
     $stmt->execute([$prescription]);
   }
 
-  public function getLabTestsRequests($nic){
+  protected function getLabTestsRequests($nic){
     $sql = "SELECT * FROM lab_tests_requests WHERE nic=?;";
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute([$nic]);
@@ -130,7 +130,7 @@ class PatientModel extends Dbh{
     return $results;
   }
 
-  public function setBasicECGRequest($nic, $serializedBasicECGRequest){
+  protected function setBasicECGRequest($nic, $serializedBasicECGRequest){
     $results = $this->getLabTestsRequests($nic);
 
     if (empty($results)) {
@@ -146,7 +146,7 @@ class PatientModel extends Dbh{
     }
   }
 
-  public function setABPMonitoringRequest($nic, $serializedABPMonitoringRequest){
+  protected function setABPMonitoringRequest($nic, $serializedABPMonitoringRequest){
     $results = $this->getLabTestsRequests($nic);
 
     if (empty($results)) {
@@ -158,6 +158,22 @@ class PatientModel extends Dbh{
       $sql = "UPDATE lab_tests_requests SET serializedABPMonitoringRequest = ? WHERE nic = ?;";
       $stmt = $this->connect()->prepare($sql);
       $stmt->execute([$serializedABPMonitoringRequest, $nic]);
+
+    }
+  }
+ 
+ protected function setHolterMonitoringRequest($nic, $serializedHolterMonitoringRequest){
+    $results = $this->getLabTestsRequests($nic);
+
+    if (empty($results)) {
+      $sql = "INSERT INTO lab_tests_requests(nic, serializedHolterMonitoringRequest) VALUES(?,?);";
+      $stmt = $this->connect()->prepare($sql);
+      $stmt->execute([$nic, $serializedHolterMonitoringRequest]);
+
+    }else{
+      $sql = "UPDATE lab_tests_requests SET serializedHolterMonitoringRequest = ? WHERE nic = ?;";
+      $stmt = $this->connect()->prepare($sql);
+      $stmt->execute([$serializedHolterMonitoringRequest, $nic]);
 
     }
   }
