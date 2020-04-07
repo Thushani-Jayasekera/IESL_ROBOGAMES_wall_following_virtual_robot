@@ -46,6 +46,10 @@ class PatientContr extends PatientModel{
     $this->setHistopathologyRequest($nic, $serializedHistopathologyRequest);
   }
   
+  public function createImmunoassayRequest($nic, $serializedImmunoassayRequest){
+    $this->setImmunoassayRequest($nic, $serializedImmunoassayRequest);
+  }
+  
   public function addDischarge($nic, $doa, $dischargeDate, $summary){
     $this->setDischarge($nic, $doa, $dischargeDate, $summary);
   }
