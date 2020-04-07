@@ -193,6 +193,21 @@ class PatientModel extends Dbh{
 
     }
   }
+ 
+ protected function setImmunoassayRequest($nic, $serializedImmunoassayRequest){
+    $results = $this->getLabTestsRequests($nic);
+
+    if (empty($results)) {
+      $sql = "INSERT INTO lab_tests_requests(nic, serializedImmunoassayRequest) VALUES(?,?);";
+      $stmt = $this->connect()->prepare($sql);
+      $stmt->execute([$nic, $serializedImmunoassayRequest]);
+
+    }else{
+      $sql = "UPDATE lab_tests_requests SET serializedImmunoassayRequest = ? WHERE nic = ?;";
+      $stmt = $this->connect()->prepare($sql);
+      $stmt->execute([$serializedImmunoassayRequest, $nic]);
+
+    }
 
   protected function setDischarge($nic, $doa, $dischargeDate, $summary){
     $sql = "UPDATE visits SET discharge_date=?, discharge_summary=?, Discharged='Yes' WHERE nic=? AND doa=?;";
