@@ -20,6 +20,7 @@
     <section class="page">
 
     <section class="info">
+
       <h2>Patient Information</h2>
       <?php
         $nic = "123703702V";//$_SESSION['nic'];
@@ -87,7 +88,9 @@
       ?>
     </section>
 
-    <section class="Visits">
+    <section class="Content">
+      <div class="visits">
+
       <?php
       //Should add coloumns for prescriptions, medical reports when the forms are made
         $visitInfo = $patientView->showCurrentVisit($nic);
@@ -102,32 +105,37 @@
         $discharged = $visitInfo[0]['Discharged'];
         echo "<h2> Latest Visit </h2>
         <table border='1'>
+          <thead>
           <tr> <th>Date of Admission</th><th>Reason for admission</th><th>Medical History</th><th>Current medications</th><th>Doctor</th><th>Ward</th><th>Discharged</th></tr>
+          </thead>
+          <tbody>
           <tr>
             <td>$doa</td><td>$reason</td><td>$history</td><td>$cm</td><td>$doctor</td><td>$ward</td><td>$discharged</td>
           </tr>
+          </tbody>
 
         </table>";
       } else {
         echo "No Visits";
       }
        ?>
-       <br>
        <a href="oldVisits.php">View visit History</a>
-    </section>
+       </div>
 
 
+<div class='navigation'>
 
-<nav>
-
-  <a href="medicalReportForm/medicalReportDisplay1.php"> Medical Report</a>
-  <a href="drugIssueRequest.php">Issue Prescription</a>
-  <a href="viewPrescription.php">Prescriptions</a>
-  <a href="dischargeForm.php">Discharge Form</a>
-  <a href="changeDoctor.php">Change Doctor</a>
+  <a href="medicalReportForm/medicalReportDisplay1.php"> Medical Report</a><br>
+  <a href="drugIssueRequest.php">Issue Prescription</a><br>
+  <a href="viewPrescription.php">Prescriptions</a><br>
+  <a href="dischargeForm.php">Discharge Form</a><br>
+  <a href="changeDoctor.php">Change Doctor</a><br>
   <!-- Add links to prescription history, lab report history, issue drug request, discharge form -->
 
-</nav>
+
+</div>
+</section>
+
 
 </section>
 
