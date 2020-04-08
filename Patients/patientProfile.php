@@ -116,22 +116,15 @@
        <a href="oldVisits.php">View visit History</a>
     </section>
 
-    <div class="newDoctor">
-      <h2>Change Doctor</h2>
 
-    <form action="includes/newDoctor.inc.php" method="post">
-      <p>Enter new Doctor's name</p>
-      <input type="text" name="newDoctor">
-      <button type="submit" name="Submit">Submit</button>
-    </form>
-  </div>
-  
+
 <nav>
 
   <a href="medicalReportForm/medicalReportDisplay1.php"> Medical Report</a>
   <a href="drugIssueRequest.php">Issue Prescription</a>
   <a href="viewPrescription.php">Prescriptions</a>
   <a href="dischargeForm.php">Discharge Form</a>
+  <a href="changeDoctor.php">Change Doctor</a>
   <!-- Add links to prescription history, lab report history, issue drug request, discharge form -->
 
 </nav>
