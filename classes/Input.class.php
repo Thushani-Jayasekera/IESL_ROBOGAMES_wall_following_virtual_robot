@@ -24,4 +24,10 @@ class Input{
         }
         return '';
     }
+    public static function post($item){
+        if(isset($_POST[$item])){
+            return $_POST[$item];
+        }
+        return '';
+    }
 }

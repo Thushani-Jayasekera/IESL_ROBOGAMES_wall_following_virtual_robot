@@ -8,7 +8,7 @@ if(!$user_uid=Input::get('user')){
 }else{
     $user=new User($user_uid);
     if(!$user->exists()){
-        Redirect::to(404);
+        Redirect::to(404);//add 404?
     }else{
         $data=$user->data();
     }
@@ -35,7 +35,7 @@ if(!$user_uid=Input::get('user')){
     <link rel="stylesheet" href="stylesheets/searchbarStyle.css">
     <div class="searchbar">
         
-        <form class="form-wrapper" action="searchbar.php" method="post">
+        <form class="form-wrapper" action="functions/searchbar.php" method="post">
             <h3 class="view"> VIEW PATIENT PROFILE</h3>
             <input type="text" id="search" placeholder="Enter Patient's NIC Number" name="search" required>
             <input type="submit" id="submit" name="submit" class="submit"> 
