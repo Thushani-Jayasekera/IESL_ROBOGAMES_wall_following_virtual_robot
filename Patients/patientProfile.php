@@ -9,12 +9,20 @@
   <head>
     <meta charset="utf-8">
     <title>Patient Profile</title>
+    <link rel="stylesheet" href="css/patientProfile.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
   </head>
   <body>
-    <div class="info">
+    <section class="page">
+
+    <section class="info">
       <h2>Patient Information</h2>
       <?php
-        $nic =$_SESSION['nic'];
+        $nic = "123703702V";//$_SESSION['nic'];
         $_SESSION['nic'] = $nic;
         $patientView = new PatientView();
         $results = $patientView->showPatientInfo($nic);
@@ -77,9 +85,9 @@
       }
       else{ echo 'Unregistered patient';}
       ?>
-    </div>
+    </section>
 
-    <div class="Visits">
+    <section class="Visits">
       <?php
       //Should add coloumns for prescriptions, medical reports when the forms are made
         $visitInfo = $patientView->showCurrentVisit($nic);
@@ -106,7 +114,7 @@
        ?>
        <br>
        <a href="oldVisits.php">View visit History</a>
-    </div>
+    </section>
 
     <div class="newDoctor">
       <h2>Change Doctor</h2>
@@ -117,6 +125,8 @@
       <button type="submit" name="Submit">Submit</button>
     </form>
   </div>
+  
+<nav>
 
   <a href="medicalReportForm/medicalReportDisplay1.php"> Medical Report</a>
   <a href="drugIssueRequest.php">Issue Prescription</a>
@@ -124,7 +134,9 @@
   <a href="dischargeForm.php">Discharge Form</a>
   <!-- Add links to prescription history, lab report history, issue drug request, discharge form -->
 
+</nav>
 
+</section>
 
   </body>
 </html>

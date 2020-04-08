@@ -161,7 +161,7 @@ class PatientModel extends Dbh{
 
     }
   }
- 
+
  protected function setHolterMonitoringRequest($nic, $serializedHolterMonitoringRequest){
     $results = $this->getLabTestsRequests($nic);
 
@@ -177,7 +177,7 @@ class PatientModel extends Dbh{
 
     }
   }
- 
+
  protected function setHistopathologyRequest($nic, $serializedHistopathologyRequest){
     $results = $this->getLabTestsRequests($nic);
 
@@ -193,7 +193,7 @@ class PatientModel extends Dbh{
 
     }
   }
- 
+
  protected function setImmunoassayRequest($nic, $serializedImmunoassayRequest){
     $results = $this->getLabTestsRequests($nic);
 
