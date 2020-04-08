@@ -208,11 +208,7 @@ class PatientModel extends Dbh{
       $stmt->execute([$serializedImmunoassayRequest, $nic]);
 
     }
-<<<<<<< HEAD
 }
-=======
-
->>>>>>> 8b9acc0495f2e8cc23f841ab81cf3d1dc3a70a19
   protected function setDischarge($nic, $doa, $dischargeDate, $summary){
     $sql = "UPDATE visits SET discharge_date=?, discharge_summary=?, Discharged='Yes' WHERE nic=? AND doa=?;";
     $stmt = $this->connect()->prepare($sql);
