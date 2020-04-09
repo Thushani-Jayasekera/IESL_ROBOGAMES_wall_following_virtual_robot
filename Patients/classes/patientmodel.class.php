@@ -162,7 +162,7 @@ class PatientModel extends Dbh{
     }
   }
 
- protected function setHolterMonitoringRequest($nic, $serializedHolterMonitoringRequest){
+  protected function setHolterMonitoringRequest($nic, $serializedHolterMonitoringRequest){
     $results = $this->getLabTestsRequests($nic);
 
     if (empty($results)) {
@@ -178,7 +178,7 @@ class PatientModel extends Dbh{
     }
   }
 
- protected function setHistopathologyRequest($nic, $serializedHistopathologyRequest){
+  protected function setHistopathologyRequest($nic, $serializedHistopathologyRequest){
     $results = $this->getLabTestsRequests($nic);
 
     if (empty($results)) {
@@ -194,7 +194,7 @@ class PatientModel extends Dbh{
     }
   }
 
- protected function setImmunoassayRequest($nic, $serializedImmunoassayRequest){
+  protected function setImmunoassayRequest($nic, $serializedImmunoassayRequest){
     $results = $this->getLabTestsRequests($nic);
 
     if (empty($results)) {
@@ -208,7 +208,40 @@ class PatientModel extends Dbh{
       $stmt->execute([$serializedImmunoassayRequest, $nic]);
 
     }
-}
+  }
+ 
+  protected function setXRayRequest($nic, $serializedXRayRequest){
+    $results = $this->getLabTestsRequests($nic);
+
+    if (empty($results)) {
+      $sql = "INSERT INTO lab_tests_requests(nic, serializedXRayRequest) VALUES(?,?);";
+      $stmt = $this->connect()->prepare($sql);
+      $stmt->execute([$nic, $serializedXRayRequest]);
+
+    }else{
+      $sql = "UPDATE lab_tests_requests SET serializedXRayRequest = ? WHERE nic = ?;";
+      $stmt = $this->connect()->prepare($sql);
+      $stmt->execute([$serializedXRayRequest, $nic]);
+
+    }
+  }
+
+  protected function setGeneralLabTestRequest($nic, $serializedGeneralLabTestRequest){
+    $results = $this->getLabTestsRequests($nic);
+
+    if (empty($results)) {
+      $sql = "INSERT INTO lab_tests_requests(nic, serializedGeneralLabTestRequest) VALUES(?,?);";
+      $stmt = $this->connect()->prepare($sql);
+      $stmt->execute([$nic, $serializedGeneralLabTestRequest]);
+
+    }else{
+      $sql = "UPDATE lab_tests_requests SET serializedGeneralLabTestRequest = ? WHERE nic = ?;";
+      $stmt = $this->connect()->prepare($sql);
+      $stmt->execute([$serializedGeneralLabTestRequest, $nic]);
+
+    }
+  }
+ 
   protected function setDischarge($nic, $doa, $dischargeDate, $summary){
     $sql = "UPDATE visits SET discharge_date=?, discharge_summary=?, Discharged='Yes' WHERE nic=? AND doa=?;";
     $stmt = $this->connect()->prepare($sql);
