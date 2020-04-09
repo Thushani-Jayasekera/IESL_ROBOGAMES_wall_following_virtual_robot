@@ -50,6 +50,14 @@ class PatientContr extends PatientModel{
     $this->setImmunoassayRequest($nic, $serializedImmunoassayRequest);
   }
   
+  public function createXRayRequest($nic, $serializedXRayRequest){
+    $this->setXRayRequest($nic, $serializedXRayRequest);
+  }
+
+  public function createGeneralLabTestRequest($nic, $serializedGeneralLabTestRequest){
+    $this->setGeneralLabTestRequest($nic, $serializedGeneralLabTestRequest);
+  }
+  
   public function addDischarge($nic, $doa, $dischargeDate, $summary){
     $this->setDischarge($nic, $doa, $dischargeDate, $summary);
   }
