@@ -30,7 +30,7 @@ require_once 'core/init.php';
 
 
         if ($user->isLoggedIn()) {
-            Redirect::to("profile.php?user=" . $user->data()->user_uid);
+            Redirect::to("profile.php");
         } else {
             ?>
             <h2 style="margin-bottom:2cm; color:white">Welcome</h2>

@@ -1,12 +1,13 @@
 <?php
 
 require_once 'core/init.php';
+$user=new User();
 
-if(!$user_uid=Input::get('user')){
-    Redirect::to('index.php');
+if(!$user->isLoggedIn()){
+    Redirect::to(404);
 
 }else{
-    $user=new User($user_uid);
+    
     if(!$user->exists()){
         Redirect::to(404);//add 404?
     }else{
@@ -21,7 +22,7 @@ if(!$user_uid=Input::get('user')){
     <hr>
 
     <p>Hello</p>
-    <?php
+   <?php
         if($user->hasPermission('Doctor')){
             echo '<p>Welcome Doctor!</p>';
         }else if($user->hasPermission('Nurse')){

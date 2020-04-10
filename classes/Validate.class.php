@@ -52,7 +52,9 @@ class Validate{
                                     $this->addError($rules['name']."must be selected");
                                 }
                                 break;
-                        
+                        case 'aplhanumeric':
+                            //alphanemric check
+                        break;
                     }
                 }
 
