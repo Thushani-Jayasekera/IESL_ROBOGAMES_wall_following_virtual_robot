@@ -32,12 +32,16 @@
       $results = $this->getAllPrescriptions($nic);
       return $results;
     }
-    
+
     public function showLabTestsRequests($nic){
       $results = $this->getLabTestsRequests($nic);
       return $results;
     }
 
+    public function showDetails($nic, $doa){
+      $results = $this->getDetails($nic, $doa);
+      return $results;
+    }
 
   }
  ?>

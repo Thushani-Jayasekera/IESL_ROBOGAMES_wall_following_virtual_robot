@@ -88,7 +88,7 @@
       ?>
     </section>
 
-    <section class="Content">
+    <section class="content">
       <div class="visits">
 
       <?php
@@ -103,14 +103,16 @@
         $doctor = $visitInfo[0]['doctor'];
         $ward = $visitInfo[0]['ward'];
         $discharged = $visitInfo[0]['Discharged'];
+        $detailsObj = unserialize($visitInfo[0]['details']);
+        $details = $detailsObj->getDetails();
         echo "<h2> Latest Visit </h2>
         <table border='1'>
           <thead>
-          <tr> <th>Date of Admission</th><th>Reason for admission</th><th>Medical History</th><th>Current medications</th><th>Doctor</th><th>Ward</th><th>Discharged</th></tr>
+          <tr> <th>Date of Admission</th><th>Reason for admission</th><th>Medical History</th><th>Current medications</th><th>Doctor</th><th>Ward</th><th>Details by the Doctor</th><th>Discharged</th></tr>
           </thead>
           <tbody>
           <tr>
-            <td>$doa</td><td>$reason</td><td>$history</td><td>$cm</td><td>$doctor</td><td>$ward</td><td>$discharged</td>
+            <td>$doa</td><td>$reason</td><td>$history</td><td>$cm</td><td>$doctor</td><td>$ward</td><td>$details</td><td>$discharged</td>
           </tr>
           </tbody>
 
@@ -119,9 +121,11 @@
         echo "No Visits";
       }
        ?>
-       <a href="oldVisits.php">View visit History</a>
-       </div>
+       <a href="addDetails.php">Add details to current visit</a><br>
 
+       <a href="oldVisits.php">View visit History</a>
+
+       </div>
 
 <div class='navigation'>
 
@@ -130,12 +134,15 @@
   <a href="viewPrescription.php">Prescriptions</a><br>
   <a href="dischargeForm.php">Discharge Form</a><br>
   <a href="changeDoctor.php">Change Doctor</a><br>
+
   <!-- Add links to prescription history, lab report history, issue drug request, discharge form -->
 
 
 </div>
-</section>
 
+
+
+</section>
 
 </section>
 

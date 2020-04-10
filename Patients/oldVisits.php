@@ -93,7 +93,7 @@
      <table class='content-table' border='1'>
        <thead>
 
-       <tr> <th>Date of Admission</th><th>Reason for admission</th><th>Medical History</th><th>Current medications</th><th>Doctor</th><th>Ward</th><th>Date of Discharge</th><th>Summary upon Discharge</th></tr>
+       <tr> <th>Date of Admission</th><th>Reason for admission</th><th>Medical History</th><th>Current medications</th><th>Doctor</th><th>Ward</th><th>Details by the Doctor</th><th>Date of Discharge</th><th>Summary upon Discharge</th></tr>
       </thead>
       <tbody>
 
@@ -111,8 +111,10 @@
           $ward = $result['ward'];
           $dischargeDate = $result['discharge_date'];
           $dischargeSummary = $result['discharge_summary'];
+          $detailsObj = unserialize($visitInfo[0]['details']);
+          $details = $detailsObj->getDetails();
           echo "<tr>
-            <td>$doa</td><td>$reason</td><td>$history</td><td>$cm</td><td>$doctor</td><td>$ward</td><td>$dischargeDate</td><td>$dischargeSummary</td>
+            <td>$doa</td><td>$reason</td><td>$history</td><td>$cm</td><td>$doctor</td><td>$ward</td><td>$details</td><td>$dischargeDate</td><td>$dischargeSummary</td>
           </tr>";
         }
       ?>

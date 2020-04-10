@@ -209,7 +209,7 @@ class PatientModel extends Dbh{
 
     }
   }
- 
+
   protected function setXRayRequest($nic, $serializedXRayRequest){
     $results = $this->getLabTestsRequests($nic);
 
@@ -241,11 +241,25 @@ class PatientModel extends Dbh{
 
     }
   }
- 
+
   protected function setDischarge($nic, $doa, $dischargeDate, $summary){
     $sql = "UPDATE visits SET discharge_date=?, discharge_summary=?, Discharged='Yes' WHERE nic=? AND doa=?;";
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute([$dischargeDate, $summary, $nic, $doa]);
+  }
+
+  protected function getDetails($nic,$doa){
+    $sql = "SELECT details FROM visits where nic=? AND doa=?;";
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$nic,$doa]);
+    $results = $stmt->fetchAll();
+    return $results;
+  }
+
+  protected function setDetails($nic, $doa, $details){
+    $sql = "UPDATE visits SET details=? WHERE nic=? AND doa=?;";
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$details, $nic, $doa]);
   }
 
 }

@@ -37,19 +37,19 @@ class PatientContr extends PatientModel{
   public function createABPMonitoringRequest($nic, $serializedABPMonitoringRequest){
     $this->setABPMonitoringRequest($nic, $serializedABPMonitoringRequest);
   }
-  
+
   public function createHolterMonitoringRequest($nic, $serializedHolterMonitoringRequest){
     $this->setHolterMonitoringRequest($nic, $serializedHolterMonitoringRequest);
   }
-  
+
   public function createHistopathologyRequest($nic, $serializedHistopathologyRequest){
     $this->setHistopathologyRequest($nic, $serializedHistopathologyRequest);
   }
-  
+
   public function createImmunoassayRequest($nic, $serializedImmunoassayRequest){
     $this->setImmunoassayRequest($nic, $serializedImmunoassayRequest);
   }
-  
+
   public function createXRayRequest($nic, $serializedXRayRequest){
     $this->setXRayRequest($nic, $serializedXRayRequest);
   }
@@ -57,9 +57,13 @@ class PatientContr extends PatientModel{
   public function createGeneralLabTestRequest($nic, $serializedGeneralLabTestRequest){
     $this->setGeneralLabTestRequest($nic, $serializedGeneralLabTestRequest);
   }
-  
+
   public function addDischarge($nic, $doa, $dischargeDate, $summary){
     $this->setDischarge($nic, $doa, $dischargeDate, $summary);
+  }
+
+  public function addDetails($nic,$doa, $details){
+    $this->setDetails($nic,$doa, $details);
   }
 
 }
