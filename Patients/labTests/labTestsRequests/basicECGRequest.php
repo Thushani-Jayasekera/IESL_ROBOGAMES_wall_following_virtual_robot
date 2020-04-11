@@ -12,7 +12,7 @@
     <h1>CARDIAC INVESTIGATION UNIT</h1>
     <h2>Basic ECG Request</h2>
     <?php
-      $nic = '982753195V';  // this should be given by a session object
+      $nic = '982753295V';  // this should be given by a session object
       $patientViewObject = new PatientView();
 
       $results = $patientViewObject->showPatientInfo($nic);
@@ -40,14 +40,14 @@
       ?>
 
       <b>Ward No : </b><input type="number" name="ward_no"><br>
-      <b>Ward : </b>OPD <input type="radio" name="ward" value="opd"> ICU <input type="radio" name="ward" value="icu"> PULHEEMS <input type="radio" name="ward" value="pulheems">
-      Clinic <input type="radio" name="ward" value="clinic"> Theater <input type="radio" name="ward" value="theater"> Dialysis <input type="radio" name="ward" value="dialysis">
-      ETU <input type="radio" name="ward" value="etu"><br><br>
+      <b>Ward : </b>OPD <input type="radio" name="ward" value="OPD"> ICU <input type="radio" name="ward" value="ICU"> PULHEEMS <input type="radio" name="ward" value="PULHEEMS">
+      Clinic <input type="radio" name="ward" value="Clinic"> Theater <input type="radio" name="ward" value="Theater"> Dialysis <input type="radio" name="ward" value="Dialysis">
+      ETU <input type="radio" name="ward" value="ETU"><br><br>
 
-      <b>In Ward : </b><input type="checkbox" name="conditions[]" value="inWard"> <b>Urgent : </b><input type="checkbox" name="conditions[]" value="urgent"> <b>Pre ope : </b> <input type="checkbox" name="conditions[]" value="preope">
-      <b>8 min walking for PULHEEMS : </b> <input type="checkbox" name="conditions[]" value="8MinPulheems"><br><br>
+      <b>In Ward : </b><input type="checkbox" name="conditions[]" value="In Ward"> <b>Urgent : </b><input type="checkbox" name="conditions[]" value="Urgent"> <b>Pre ope : </b> <input type="checkbox" name="conditions[]" value="Pre ope">
+      <b>8 min walking for PULHEEMS : </b> <input type="checkbox" name="conditions[]" value="8 min walking for PULHEEMS"><br><br>
 
-      <b>Standard Leads : </b><input type="checkbox" name="leads[]" value="standardLeads"><b> L II Rhythem strip : </b><input type="checkbox" name="leads[]" value="l2rythem"><b> Deep inspiration : </b><input type="checkbox" name="leads[]" value="deepInspiration">
+      <b>Standard Leads : </b><input type="checkbox" name="leads[]" value="Standard Leads"><b> L II Rhythem strip : </b><input type="checkbox" name="leads[]" value="L II Rhythem strip"><b> Deep inspiration : </b><input type="checkbox" name="leads[]" value="Deep inspiration">
       <b> Other Leads : </b><input type="text" name="leads[]"><br><br><br>
 
       <b>Short History of case : </b><textarea name="shortHistory" rows="4" cols="50"></textarea><br><br><br>
@@ -59,22 +59,14 @@
         echo "<b>Name of Consultant/MO : </b>".$consMOName."<br><b> NIC of Consultant/MO : </b>".$consMOID;
 
         $_SESSION['nic'] = $nic;
-        $_SESSION['dateOfRequest'] = $_POST['dateOfRequest'];
         $_SESSION['force_id'] = $patientInfo['force_id'];
         $_SESSION['rank'] = $patientInfo['rank'];
         $_SESSION['first_name'] = $patientInfo['first_name'];
         $_SESSION['last_name'] = $patientInfo['last_name'];
         $_SESSION['unit'] = $patientInfo['regiment'];
-        $_SESSION['age'] = $_POST['age'];
         $_SESSION['gender'] = $gender;
-        $_SESSION['ward_no'] = $_POST['ward_no'];
-        $_SESSION['ward'] = $_POST['ward'];
-        $_SESSION['conditions'] = $_POST['conditions'];
-        $_SESSION['leads'] = $_POST['leads'];
-        $_SESSION['shortHistory'] = $_POST['shortHistory'];
         $_SESSION['consMOName'] = $consMOName;
         $_SESSION['consMOID'] = $consMOID;
-
 
       ?>
 
