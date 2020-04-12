@@ -12,7 +12,7 @@
     <h1>ARMY HOSPITAL</h1>
     <h2>Request for Laboratory Examination</h2>
     <?php
-      $nic = '982753195V';  // this should be given by a session object
+      $nic = '982753295V';  // this should be given by a session object
       $patientViewObject = new PatientView();
 
       $results = $patientViewObject->showPatientInfo($nic);
@@ -63,24 +63,12 @@
 
 
         $_SESSION['nic'] = $nic;
-        $_SESSION['labyReportNo'] = $_POST['labyReportNo'];
-        $_SESSION['sendersNo'] = $_POST['sendersNo'];
         $_SESSION['force_id'] = $patientInfo['force_id'];
         $_SESSION['rank'] = $patientInfo['rank'];
         $_SESSION['first_name'] = $patientInfo['first_name'];
         $_SESSION['last_name'] = $patientInfo['last_name'];
         $_SESSION['unit'] = $patientInfo['regiment'];
-        $_SESSION['age'] = $_POST['age'];
         $_SESSION['gender'] = $gender;
-        $_SESSION['ward'] = $_POST['ward'];
-        $_SESSION['at'] = $_POST['at'];
-        $_SESSION['specimen'] = $_POST['specimen'];
-        $_SESSION['exam'] = $_POST['exam'];
-        $_SESSION['spPoints'] = $_POST['spPoints'];
-        $_SESSION['diagnosis'] = $_POST['diagnosis'];
-        $_SESSION['station'] = $_POST['station'];
-        $_SESSION['dateOfRequest'] = $_POST['dateOfRequest'];
-        $_SESSION['time'] = $_POST['time'];
         $_SESSION['consMOName'] = $consMOName;
         $_SESSION['designation'] = $designation;
         $_SESSION['consMOID'] = $consMOID;
