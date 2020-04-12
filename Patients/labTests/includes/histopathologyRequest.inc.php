@@ -11,31 +11,32 @@
   $unit = $_SESSION['unit'];
   $age = $_SESSION['age'];
   $gender = $_SESSION['gender'];
-  $telNo = $_SESSION['telNo'];
-  $ward = $_SESSION['ward'];
+  $telNo = $_POST['telNo'];
+  $ward = $_POST['ward'];
   $specimen = $_POST['specimen'];
-  $clinicalHistory= $_SESSION['clinicalHistory'];
-  $investigations = $_SESSION['investigations'];
-  $radio = $_SESSION['radio'];
-  $proDiff= $_SESSION['proDiff'];
-  $prev = $_SESSION['prev'];
-  $time = $_SESSION['time'];
-  $reportNo = $_SESSION['reportNo'];
-  $chemo = $_SESSION['chemo'];
-  $radiotherapy = $_SESSION['radiotherapy'];
-  $findings = $_SESSION['findings'];
-  $contactDoc = $_SESSION['contactDoc'];
-  $contact = $_SESSION['contact'];
-  $date = $_SESSION['date'];
+  $clinicalHistory= $_POST['clinicalHistory'];
+  $investigations = $_POST['investigations'];
+  $radio = $_POST['radio'];
+  $proDiff= $_POST['proDiff'];
+  $prev = $_POST['prev'];
+  $time = $_POST['time'];
+  $reportNo = $_POST['reportNo'];
+  $chemo = $_POST['chemo'];
+  $radiotherapy = $_POST['radiotherapy'];
+  $findings = $_POST['findings'];
+  $contactDoc = $_POST['contactDoc'];
+  $contact = $_POST['contact'];
+  $date = $_POST['date'];
   $designation = $_SESSION['designation'];
-  $hisNo = $_SESSION['hisNo'];
-  $repRoom = $_SESSION['repRoom'];
+  $hisNo = $_POST['hisNo'];
+  $repRoom = $_POST['repRoom'];
   $consMOName = $_SESSION['consMOName'];
   $consMOID = $_SESSION['consMOID'];
+  $familyName = $_SESSION['familyName'];
 
-  $details = array($specimen, $clinicalHistory, $investigations, $radio, $proDiff, $appointedDate, $prev, $reportNo, $chemo, $radiotherapy, $findings, $contactDoc, $contact, $date, $hisNo, $repRoom);
+  $details = array($specimen, $clinicalHistory, $investigations, $radio, $proDiff, $prev, $reportNo, $chemo, $radiotherapy, $findings, $contactDoc, $contact, $date, $hisNo, $repRoom);
 
-  $histopathologyRequestObject = new HistopathologyRequest($nic, $force_id, $rank, $first_name, $last_name, $unit, $age, $gender, $telNo, $ward, $details, $consMOName, $designation, $consMOID);
+  $histopathologyRequestObject = new HistopathologyRequest($nic, $force_id, $rank, $first_name, $last_name, $unit, $age, $gender, $telNo, $ward, $details, $consMOName, $designation, $consMOID, $familyName);
 
   $serializedHistopathologyRequest = serialize($histopathologyRequestObject);
 
