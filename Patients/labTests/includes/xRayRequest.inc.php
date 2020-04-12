@@ -4,15 +4,15 @@
   include_once "../classes/xRayRequest.class.php";
 
   $nic = $_SESSION['nic'];
-  $dateOfRequest = $_SESSION['dateOfRequest'];
+  $dateOfRequest = $_POST['dateOfRequest'];
   $force_id = $_SESSION['force_id'];
   $rank = $_SESSION['rank'];
   $first_name = $_SESSION['first_name'];
   $last_name = $_SESSION['last_name'];
   $unit = $_SESSION['unit'];
-  $age = $_SESSION['age'];
-  $xRayPart = $_SESSION['xRayPart'];
-  $shortHistory = $_SESSION['shortHistory'];
+  $age = $_POST['age'];
+  $xRayPart = $_POST['xRayPart'];
+  $shortHistory = $_POST['shortHistory'];
   $consMOName = $_SESSION['consMOName'];
   $designation = $_SESSION['designation'];
   $consMOID = $_SESSION['consMOID'];
