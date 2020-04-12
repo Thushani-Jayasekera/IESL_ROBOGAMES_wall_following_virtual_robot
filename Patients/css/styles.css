@@ -1,0 +1,88 @@
+body{
+  background-image:url('../../stylesheets/army-hospital.jpg');
+  background-size:cover;
+  background-attachment:fixed;
+  font-family: sans-serif;
+  overflow-y: auto;
+}
+
+.form{
+  background:#3e3d3d;
+  width:70%;
+  margin: auto;
+  position: relative;
+  top:70px;
+  padding: 50px;
+  opacity: 0.9;
+  border-radius: 30px;
+  color: whitesmoke;
+
+}
+#form-1{
+  width: 25%;
+}
+
+input, textarea{
+  background: none;
+  display:inline-block;
+  width:100%;
+  padding:10px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #fff;
+}
+
+#last-input{
+  width: 49.5%;
+}
+button{
+  background:#a4b15c;
+  border:0;
+  cursor:pointer;
+  width:50%;
+  position: relative;
+  left:25%;
+  padding:10px;
+  border-radius: 20px;
+  color: black;
+  font-weight: bold;
+}
+
+button:hover{
+  background: #636941;
+  transition: .6s;}
+
+::placeholder{color: #fff;}
+
+header{
+
+  margin:auto;
+  text-align: center;
+  padding: 30px;
+  background-color: #3e3d3d;
+  opacity:0.75;
+}
+
+h2{
+  color: whitesmoke;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+#white-text{
+  color: whitesmoke;
+  font-family: sans-serif;
+  text-align: center;
+}
+.form-check{
+  align-content: center;
+}
+
+h5{
+  color: whitesmoke;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
