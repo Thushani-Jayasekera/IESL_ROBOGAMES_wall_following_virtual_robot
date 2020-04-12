@@ -12,7 +12,7 @@
     <h1>Army Hospital</h1>
     <h2>X Ray Request</h2>
     <?php
-      $nic = '982753195V';  // this should be given by a session object
+      $nic = '982753295V';  // this should be given by a session object
       $patientViewObject = new PatientView();
 
       $results = $patientViewObject->showPatientInfo($nic);
@@ -41,15 +41,11 @@
 
 
         $_SESSION['nic'] = $nic;
-        $_SESSION['dateOfRequest'] = $_POST['dateOfRequest'];
         $_SESSION['force_id'] = $patientInfo['force_id'];
         $_SESSION['rank'] = $patientInfo['rank'];
         $_SESSION['first_name'] = $patientInfo['first_name'];
         $_SESSION['last_name'] = $patientInfo['last_name'];
         $_SESSION['unit'] = $patientInfo['regiment'];
-        $_SESSION['age'] = $_POST['age'];
-        $_SESSION['xRayPart'] = $_POST['xRayPart'];
-        $_SESSION['shortHistory'] = $_POST['shortHistory'];
         $_SESSION['consMOName'] = $consMOName;
         $_SESSION['designation'] = $designation;
         $_SESSION['consMOID'] = $consMOID;
