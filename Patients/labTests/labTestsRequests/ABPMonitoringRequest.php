@@ -12,7 +12,7 @@
     <h1>CARDIAC INVESTIGATION UNIT</h1>
     <h2>ABP Monitoring Request</h2>
     <?php
-      $nic = '982753195V';  // this should be given by a session object
+      $nic = '982753295V';  // this should be given by a session object
       $patientViewObject = new PatientView();
 
       $results = $patientViewObject->showPatientInfo($nic);
@@ -68,23 +68,13 @@
         echo "<b>Name of Consultant/MO : </b>".$consMOName."<br><b> NIC of Consultant/MO : </b>".$consMOID;
 
         $_SESSION['nic'] = $nic;
-        $_SESSION['dateOfRequest'] = $_POST['dateOfRequest'];
         $_SESSION['force_id'] = $patientInfo['force_id'];
         $_SESSION['rank'] = $patientInfo['rank'];
         $_SESSION['first_name'] = $patientInfo['first_name'];
         $_SESSION['last_name'] = $patientInfo['last_name'];
         $_SESSION['unit'] = $patientInfo['regiment'];
-        $_SESSION['age'] = $_POST['age'];
         $_SESSION['gender'] = $gender;
-        $_SESSION['ward_no'] = $_POST['ward_no'];
-        $_SESSION['bp'] = $_POST['bp'];
         $_SESSION['dob'] = $dob;
-        $_SESSION['height'] = $_POST['height'];
-        $_SESSION['weight'] = $_POST['weight'];
-        $_SESSION['contact'] = $_POST['contact'];
-        $_SESSION['appointedDate'] = $_POST['appointedDate'];
-        $_SESSION['time'] = $_POST['time'];
-        $_SESSION['shortHistory'] = $_POST['shortHistory'];
         $_SESSION['consMOName'] = $consMOName;
         $_SESSION['consMOID'] = $consMOID;
 
