@@ -12,7 +12,7 @@
     <h1>DEPARTMENT OF HISTOPATHOLOGY</h1>
     <h2>Request Form for Histopathology / FNAC</h2>
     <?php
-      $nic = '982753195V';  // this should be given by a session object
+      $nic = '982753295V';  // this should be given by a session object
       $patientViewObject = new PatientView();
 
       $results = $patientViewObject->showPatientInfo($nic);
@@ -44,7 +44,7 @@
       <?php
         $mobile = $patientInfo['mobile'];
 
-        echo '<br><br><b>Tel. No : </b><input type="number" name="telNo" value='.$mobile.'><br><br>';
+        echo '<b>Tel. No : </b><input type="number" name="telNo" value='.$mobile.'><br><br>';
        ?>
 
        <b>Specimen type & site : </b><br><textarea name="specimen" rows="4" cols="50"></textarea><br><br>
@@ -54,8 +54,8 @@
        <b>Probe diagnosis / Differential diagnosis : </b><br><textarea name="proDiff" rows="4" cols="50"></textarea><br><br>
        <b>If a previous biopsy was done (including FNAC/PAP/Ytru cut etc.) give details diagnosis : </b><br><textarea name="prev" rows="4" cols="50"></textarea><br><br>
        <b>If done at Army Hospital, reference number of pathology report : </b><br><textarea name="reportNo" rows="4" cols="50"></textarea><br><br>
-       <b>Pre.Op.chemotherapy given : </b> Yes <input type="radio" name="chemo" value="yes"> No <input type="radio" name="chemo" value="No"><br><br>
-       <b>Radiotherapy given : </b> Yes <input type="radio" name="radiotherapy" value="yes"> No <input type="radio" name="radiotherapy" value="No"><br><br>
+       <b>Pre.Op.chemotherapy given : </b> Yes <input type="radio" name="chemo" value="Yes"> No <input type="radio" name="chemo" value="No"><br><br>
+       <b>Radiotherapy given : </b> Yes <input type="radio" name="radiotherapy" value="Yes"> No <input type="radio" name="radiotherapy" value="No"><br><br>
        <b>Relevent opertative findings / endoscopic findings and orientation of the specimen : </b><br><textarea name="findings" rows="4" cols="50"></textarea><br><br>
        <b>Details of the Consultant / MO to be contacted for further details regarding the surgery/ procedure : </b><br><textarea name="contactDoc" rows="4" cols="50"></textarea><br><br>
        <?php         echo '<br><br><b>Contact No : </b><input type="number" name="contact" value='.$mobile.'><br><br>' ?>
@@ -76,30 +76,10 @@
         $_SESSION['first_name'] = $patientInfo['first_name'];
         $_SESSION['last_name'] = $patientInfo['last_name'];
         $_SESSION['unit'] = $patientInfo['regiment'];
-        $_SESSION['age'] = $_POST['age'];
         $_SESSION['gender'] = $gender;
-        $_SESSION['telNo'] = $_POST['telNo'];
-        $_SESSION['ward'] = $_POST['ward'];
-        $_SESSION['specimen'] = $_POST['specimen'];
-        $_SESSION['clinicalHistory'] = $_POST['clinicalHistory'];
-        $_SESSION['investigations'] = $_POST['investigations'];
-        $_SESSION['radio'] = $_POST['radio'];
-        $_SESSION['proDiff'] = $_POST['proDiff'];
-        $_SESSION['appointedDate'] = $_POST['appointedDate'];
-        $_SESSION['prev'] = $_POST['prev'];
-        $_SESSION['reportNo'] = $_POST['reportNo'];
-        $_SESSION['chemo'] = $_POST['chemo'];
-        $_SESSION['radiotherapy'] = $_POST['radiotherapy'];
-        $_SESSION['findings'] = $_POST['findings'];
-        $_SESSION['contactDoc'] = $_POST['contactDoc'];
-        $_SESSION['contact'] = $_POST['contact'];
-        $_SESSION['date'] = $_POST['date'];
         $_SESSION['consMOName'] = $consMOName;
         $_SESSION['designation'] = $designation;
         $_SESSION['consMOID'] = $consMOID;
-        $_SESSION['hisNo'] = $_POST['hisNo'];
-        $_SESSION['repRoom'] = $_POST['repRoom'];
-
 
       ?>
 
