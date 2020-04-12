@@ -4,23 +4,23 @@
   include_once "../classes/holterMonitoringRequest.class.php";
 
   $nic = $_SESSION['nic'];
-  $dateOfRequest = $_SESSION['dateOfRequest'];
+  $dateOfRequest = $_POST['dateOfRequest'];
   $force_id = $_SESSION['force_id'];
   $rank = $_SESSION['rank'];
   $first_name = $_SESSION['first_name'];
   $last_name = $_SESSION['last_name'];
   $unit = $_SESSION['unit'];
-  $age = $_SESSION['age'];
+  $age = $_POST['age'];
   $gender = $_SESSION['gender'];
-  $ward_no = $_SESSION['ward_no'];
+  $ward_no = $_POST['ward_no'];
   $bp = $_POST['bp'];
   $dob = $_SESSION['dob'];
-  $height = $_SESSION['height'];
-  $weight = $_SESSION['weight'];
-  $contact = $_SESSION['contact'];
-  $appointedDate = $_SESSION['appointedDate'];
-  $time = $_SESSION['time'];
-  $shortHistory = $_SESSION['shortHistory'];
+  $height = $_POST['height'];
+  $weight = $_POST['weight'];
+  $contact = $_POST['contact'];
+  $appointedDate = $_POST['appointedDate'];
+  $time = $_POST['time'];
+  $shortHistory = $_POST['shortHistory'];
   $consMOName = $_SESSION['consMOName'];
   $consMOID = $_SESSION['consMOID'];
 
