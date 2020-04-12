@@ -15,8 +15,9 @@
     private $consMOName;
     private $designation;
     private $consMOID;
+    private $familyName;
 
-    public function __construct($nic, $force_id, $rank, $first_name, $last_name, $unit, $age, $gender, $telNo, $ward, $details, $consMOName, $designation, $consMOID){
+    public function __construct($nic, $force_id, $rank, $first_name, $last_name, $unit, $age, $gender, $telNo, $ward, $details, $consMOName, $designation, $consMOID, $familyName){
       $this->nic = $nic;
       $this->force_id = $force_id;
       $this->rank = $rank;
@@ -31,6 +32,7 @@
       $this->consMOName = $consMOName;
       $this->designation = $designation;
       $this->consMOID = $consMOID;
+      $this->familyName = $familyName;
 
     }
 
