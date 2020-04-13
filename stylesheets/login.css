@@ -1,0 +1,6 @@
+body{background-image:url('army-hospital.jpg'); 
+    background-size:cover;
+    background-attachment:fixed; 
+    font-family: sans-serif;
+    overflow-y: auto;
+}
