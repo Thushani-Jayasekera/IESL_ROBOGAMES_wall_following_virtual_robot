@@ -43,5 +43,10 @@
       return $results;
     }
 
+    public function showProfilePic($nic, $patientType){
+      $results = $this->getProfilePic($nic, $patientType);
+      return $results;
+    }
+
   }
  ?>

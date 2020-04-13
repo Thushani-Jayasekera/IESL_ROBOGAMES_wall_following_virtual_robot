@@ -17,6 +17,12 @@ class statusCheck{
             }elseif($statusCheck == "success"){
               echo "<p style = 'color: white;' class='success'>Successful!</p>";
               exit();
+            }elseif($statusCheck == "size"){
+              echo "<p style = 'color: white;' class='error'>File size is too big.</p>";
+            }elseif($statusCheck == "type"){
+              echo "<p style = 'color: white;' class='error'>Invalid file type.</p>";
+            }elseif($statusCheck == "generic"){
+              echo "<p style = 'color: white;' class='error'>The file could not be uploaded.</p>";
             }
       }
     }

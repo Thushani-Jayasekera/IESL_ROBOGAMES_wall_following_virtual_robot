@@ -28,6 +28,17 @@
         $patientView = new PatientView();
         $results = $patientView->showPatientInfo($nic);
         $_SESSION['patientType'] = $results['type'];
+        $patientType = $results['type'];
+        $photoresults = $patientView->showProfilePic($nic, $patientType);
+        $photoLocation = $photoresults[0]['photo'];
+        echo "<div class='photo'>";
+        if (!empty($photoLocation)){
+          echo "<img src=".$photoLocation." alt='Profile pic'>";
+        } else {
+          echo "<img src=profilePics/default.jpg alt='Profile pic'><br>";
+        }
+        echo "</div>";
+
         if (!empty($results[0])){
           if($results['type'] == 'force') {
             $force_id = $results[0]['force_id'];

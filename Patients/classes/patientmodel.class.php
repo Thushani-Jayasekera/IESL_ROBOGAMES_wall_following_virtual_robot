@@ -271,6 +271,17 @@ class PatientModel extends Dbh{
     }
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute([$photoLocation, $nic]);
+  }
 
+  protected function getProfilePic($nic, $patientType){
+    if ($patientType == "force"){
+      $sql = "SELECT photo FROM forces_patients WHERE NIC=?;";
+    } else {
+      $sql = "SELECT photo FROM family_patients WHERE NIC=?;";
+    }
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$nic]);
+    $results = $stmt->fetchAll();
+    return $results;    
   }
 }

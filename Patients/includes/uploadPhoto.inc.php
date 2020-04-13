@@ -22,8 +22,9 @@ if (isset($_POST['submit'])){
           $newFileName = "profile".$nic.".".$fileExtension;
           $fileDestination = "../profilepics/".$newFileName;
           move_uploaded_file($tempLocation, $fileDestination);
-          $patientObj->addProfilePic($nic, $type, $fileDestination);
-          // Redirect::to('../patientProfile.php');
+          $actualDestination = "profilepics/".$newFileName;
+          $patientObj->addProfilePic($nic, $type, $actualDestination);
+          Redirect::to('../patientProfile.php');
 
       } else {
         Redirect::to('../uploadPhoto.php?error=size');

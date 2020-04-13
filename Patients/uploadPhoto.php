@@ -1,3 +1,7 @@
+<?php
+include "includes/class-autoload.inc.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -28,6 +32,9 @@
         <button type="submit" name="submit">Upload</button>
 
       </form>
+      <?php
+      statusCheck::check("error");
+       ?>
 
     </div>
   </body>
