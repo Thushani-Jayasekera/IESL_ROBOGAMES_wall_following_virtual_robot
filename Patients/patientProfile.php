@@ -27,6 +27,7 @@
         $_SESSION['nic'] = $nic;
         $patientView = new PatientView();
         $results = $patientView->showPatientInfo($nic);
+        $_SESSION['patientType'] = $results['type'];
         if (!empty($results[0])){
           if($results['type'] == 'force') {
             $force_id = $results[0]['force_id'];
@@ -86,6 +87,7 @@
       }
       else{ echo 'Unregistered patient';}
       ?>
+      <a href="uploadPhoto.php">Upload profile picture</a>
     </section>
 
     <section class="content">
