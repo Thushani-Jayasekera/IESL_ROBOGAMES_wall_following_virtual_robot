@@ -1,35 +1,6 @@
 <?php
 require_once 'core/init.php';
-
 $error_msg=Input::get('error_msg');
-if (Input::exists()) {
-    if (Token::check(Input::get('token')));
-    $validate = new Validate();
-    $validation = $validate->check($_POST, array(
-        'user_uid' => array('name' => 'User name', 'required' => true),
-        'user_pwd' => array('name' => 'Password', 'required' => true)
-
-    ));
-
-    if ($validation->passed()) {
-        $user = new User();
-        $remember = (Input::get('user_remember') === 'on') ? true : false;
-        $login = $user->login(Input::get('user_uid'), Input::get('user_pwd'), $remember);
-        if ($login) {
-            Redirect::to('index.php');
-        } else {
-            Redirect::to('login.php','Sorry Login Failed.ID Number or Password Invalid.');
-        }
-    } else {
-        Redirect::to('login.php','Both the ID NUmber and Password are required.');
-        
-    }
-}
-
-
-
-
-
 ?>
 
 
@@ -67,7 +38,7 @@ if (Input::exists()) {
             </div>
             <div class="col-7 p-0" style="background-color: blue">
                 <div class='card p-3'>
-                    <form action="" method="POST">
+                    <form action="controllerlogin.php" method="POST">
                         <div class="text-left">
                             <h3>Add your details here</h13>
                         </div>

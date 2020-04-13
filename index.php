@@ -39,8 +39,8 @@ require_once 'core/init.php';
             <h2 class="p-3">Sri Lanka Army Hospital</h2>
             <hr style="background-color: blue">
             <?php
-            echo   "<button type='button' class='btn btn-primary ' cl onclick=\"window.location.href='login.php'\">LOG IN</button><br><br>";
-            echo   "<button type='button' class='btn btn-primary mb-3' onclick=\"window.location.href='register.php'\">REGISTER</button>";
+            echo   "<button type='button' class='btn btn-primary ' cl onclick=\"window.location.href='viewlogin.php'\">LOG IN</button><br><br>";
+            echo   "<button type='button' class='btn btn-primary mb-3' onclick=\"window.location.href='viewregister.php'\">REGISTER</button>";
          }
         ?>
         </div>
