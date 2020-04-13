@@ -1,8 +1,7 @@
 <?php
   include_once "includes/class-autoload.inc.php";
   session_start();
-
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
