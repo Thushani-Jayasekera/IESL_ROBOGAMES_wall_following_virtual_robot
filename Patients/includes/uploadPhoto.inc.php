@@ -2,6 +2,8 @@
 include 'class-autoload.inc.php';
 session_start();
 $nic = $_SESSION['nic'];
+$type = $_SESSION['patientType'];
+$patientObj = new PatientContr();
 
 if (isset($_POST['submit'])){
   $file = $_FILES['image'];
@@ -16,10 +18,18 @@ if (isset($_POST['submit'])){
 
   if (in_array($fileExtension, $allowed)){
     if ($error === 0){
+      if ($fileSize < 1000000){
+          $newFileName = "profile".$nic.".".$fileExtension;
+          $fileDestination = "../profilepics/".$newFileName;
+          move_uploaded_file($tempLocation, $fileDestination);
+          $patientObj->addProfilePic($nic, $type, $fileDestination);
+          // Redirect::to('../patientProfile.php');
 
+      } else {
+        Redirect::to('../uploadPhoto.php?error=size');
+      }
     } else {
       Redirect::to('../uploadPhoto.php?error=generic');
-
     }
   } else {
     Redirect::to('../uploadPhoto.php?error=type');

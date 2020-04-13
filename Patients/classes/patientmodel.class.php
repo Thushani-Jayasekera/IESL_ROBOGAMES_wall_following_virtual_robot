@@ -262,4 +262,15 @@ class PatientModel extends Dbh{
     $stmt->execute([$details, $nic, $doa]);
   }
 
+  protected function setProfilePic($nic, $type, $photoLocation){
+    if ($type == 'force'){
+      $sql = "UPDATE forces_patients SET photo=? WHERE nic=?;";
+    } else {
+      $sql = "UPDATE family_patients SET photo=? WHERE nic=?;";
+
+    }
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$photoLocation, $nic]);
+
+  }
 }

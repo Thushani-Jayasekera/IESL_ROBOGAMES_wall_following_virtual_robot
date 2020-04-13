@@ -66,4 +66,8 @@ class PatientContr extends PatientModel{
     $this->setDetails($nic,$doa, $details);
   }
 
+  public function addProfilePic($nic, $type, $photoLocation){
+    $this->setProfilePic($nic, $type, $photoLocation);
+  }
+
 }
