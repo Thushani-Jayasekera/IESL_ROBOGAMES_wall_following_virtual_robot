@@ -1,0 +1,68 @@
+@import "styles.css";
+
+.content-table{
+  width:100%;
+  border-collapse: collapse;
+  min-width: 900px;
+  border-radius: 5px 5px 0 0;
+}
+
+.content-table thead tr{
+  background-color: whitesmoke;
+  color: black;
+  text-align: center;
+   font-weight: bold;
+   border: 1px solid white;
+
+}
+
+
+.content-table tbody tr{
+  border: 1px solid white;
+}
+
+/* .content-table tbody tr:nth-of-type(even){
+  background-color: grey;
+} */
+.content-table tbody tr:hover{
+  font-weight: bold;
+  color: #FFF8DC;
+}
+
+input[type="checkbox"]{
+  display: inline-block;
+}
+
+
+#button-row{
+  width:15%;
+  margin-top: 20px;
+  position: relative;
+  left:0;
+}
+
+#short{
+  width:20%;
+}
+
+.short-table{
+  width:20%;
+}
+
+.short-table thead tr{
+  background-color: whitesmoke;
+  color: black;
+  text-align: center;
+   font-weight: bold;
+   border: 1px solid white;
+}
+.short-table tbody tr{
+  border: 1px solid white;
+}
+
+#f10{
+  width:40%;
+}
+a{
+  color: azure;
+}
