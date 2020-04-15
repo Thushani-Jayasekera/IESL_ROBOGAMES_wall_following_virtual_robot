@@ -40,13 +40,13 @@ $error_msg = Input::get('error_msg');
 
                     <hr>
                     <div class="form-group">
-                        <input type="text" name="user_first" id="user_first" class='form-control' value="<?php echo escape(Input::get('user_first')); ?>" autocomplete="off" placeholder="First Name">
+                        <input type="text" name="user_first" id="user_first" class='form-control' value="<?php echo escape(Input::get('user_first')); ?>" autocomplete="off" placeholder="First Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="user_last" id="user_last" class='form-control' value="<?php echo escape(Input::get('user_last')); ?>" autocomplete="off" placeholder="Last Name">
+                        <input type="text" name="user_last" id="user_last" class='form-control' value="<?php echo escape(Input::get('user_last')); ?>" autocomplete="off" placeholder="Last Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="user_uid" id="user_uid" class='form-control' value="<?php echo escape(Input::get('user_uid')); ?>" autocomplete="off" placeholder="ID Number">
+                        <input type="text" name="user_uid" id="user_uid" class='form-control' value="<?php echo escape(Input::get('user_uid')); ?>" autocomplete="off" placeholder="ID Number" required>
                     </div>
                     <div class="form-group ">
                         <p> Select Category <p>
@@ -73,10 +73,10 @@ $error_msg = Input::get('error_msg');
 
                     </div>
                     <div class="form-group">
-                        <input type="password" name="user_pwd" class='form-control' id="user_pwd" placeholder="Password">
+                        <input type="password" name="user_pwd" class='form-control' id="user_pwd" placeholder="Password" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" name="user_pwd_again" class='form-control' id="user_pwd_again" placeholder="Confirm Password">
+                        <input type="password" name="user_pwd_again" class='form-control' id="user_pwd_again" placeholder="Confirm Password" required>
                     </div>
 
                     <input type="hidden" name="token" value="<?php echo  Token::generate(); ?>">

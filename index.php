@@ -31,7 +31,7 @@ require_once 'core/init.php';
 
 
         if ($user->isLoggedIn()) {
-            Redirect::to("profile.php");
+            Redirect::to("viewhome.php");
         } else {
             ?>
             

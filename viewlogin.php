@@ -45,11 +45,11 @@ $error_msg=Input::get('error_msg');
                         <hr>
                         <div class="form-group">
                             <label for="user_uid">Your ID Number</label>
-                            <input type="text" class="form-control" class="form-control" name='user_uid' id='user_uid'  placeholder="ID Number">
+                            <input type="text" class="form-control" class="form-control" name='user_uid' id='user_uid'  placeholder="ID Number" required>
                         </div>
                         <div class="form-group">
                             <label for="user_pwd">Your Password</label>
-                            <input type="password" class="form-control" name='user_pwd' id='user_pwd' autocomplete="off" placeholder="Password">
+                            <input type="password" class="form-control" name='user_pwd' id='user_pwd' autocomplete="off" placeholder="Password" required>
                         </div>
                         <div class="form-group">
                             <input type="checkbox" class="checkbox-inline" name='user_remember' id='user_remember' class="urm">
