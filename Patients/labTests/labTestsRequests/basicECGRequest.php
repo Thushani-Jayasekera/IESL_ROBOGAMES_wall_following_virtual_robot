@@ -22,7 +22,7 @@
       ?>
 
       <form action="../includes/basicECGRequest.inc.php" method="post">
-        <div class="section"><span>1</span>Date</div>
+        <div class="section">Date</div>
         <div class="inner-wrap">
           <input type="date" name="dateOfRequest">
         </div>
