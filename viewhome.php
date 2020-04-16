@@ -37,7 +37,14 @@ if (!$user->isLoggedIn()) {
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="stylesheets/defaultprofileimg.jpg" width="25" height="25" class="d-inline-block align-top" alt="options">
+                                <?php if ($data->user_imgstatus) { 
+                                    $uid=$data->user_uid;
+                                    $imgSource='staffprofileimgs/profileimg'.$uid.'.jpeg';?><!--only allow jpeg-->
+                                    <!--profile pic-->
+                                    <img src=<?php echo $imgSource ?> width="25" height="25" class="d-inline-block align-top rounded-circle"alt="real poflile pic">
+                                <?php } else { ?>
+                                    <img src="stylesheets/defaultprofileimg.jpg" width="25" height="25" class="d-inline-block align-top rounded-circle" alt="options">
+                                <?php } ?>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="update.php">Edit profile </a>
@@ -54,7 +61,15 @@ if (!$user->isLoggedIn()) {
             <?php include_once 'stylesheets/sidebar.html' ?>
             <div id="mySidebar" class="sidebar shadow text-center">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-                <img src="stylesheets/defaultprofileimg.jpg" alt="" width='250px' height="100px" class="img-fluid">
+                <?php if ($data->user_imgstatus) { 
+                    $uid=$data->user_uid;
+                    $imgSource='staffprofileimgs/profileimg'.$uid.'.jpg';?>
+                    
+                    <img src=<?php echo $imgSource ?> alt="real poflile pic" width='250px' height="100px" class="img-fluid">
+                <?php } else { ?>
+                    <img src="stylesheets/defaultprofileimg.jpeg" alt="profile img" width='250px' height="100px" class="img-fluid">
+                <?php } ?>
+                
                 <!--add profile img-->
                 <p style="font-size: 25px;font-weight:bold;"><?php echo escape($data->user_first) . " " . escape($data->user_last); ?></p>
                 <p style="color: gray"><?php echo escape($data->user_uid); ?></p>

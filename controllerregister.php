@@ -56,7 +56,8 @@ if (Input::exists()) {
                     'user_pwd' => Hash::make(Input::post('user_pwd')),
                     'user_uid' => Input::post('user_uid'),
                     'user_joined' => date('Y-m-d H:i:s'),
-                    'user_group' => Input::post('user_group')
+                    'user_group' => Input::post('user_group'),
+                    'user_imgstatus'=>0,
 
                 ));
                 Session::flash('home', 'You are now registered you can now log in');

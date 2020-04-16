@@ -79,6 +79,14 @@ if(Input::exists()){
     <main>
     <div class='field'>
         <h1>Edit Information</h1>
+        <form action="controllerprofileimg.php" method="post" enctype="multipart/form-data" class="card p-3">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="profile_img" name="profile_img" required>
+                        <label class="custom-file-label text left" for="profle_img">Select img</label>
+                    </div>
+                    <br>
+                    <input type="submit" id="submit_profileimg" name="submit_profileimg" class="btn btn-outline-primary" value='Save changes and upload'data-toggle="tooltip" data-placement="bottom" title="Upload profile picture">
+        </form>
         <form action="" method="POSt">
     
             <label for='user_first'>First Name</label>
