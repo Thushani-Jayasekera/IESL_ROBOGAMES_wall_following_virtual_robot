@@ -17,7 +17,7 @@ if (!$user->isLoggedIn()) {
         $fileExt = explode('.',$fileName);
         $fileActualExt =strtolower(end($fileExt));
 
-        $allowed  =array('jpeg');
+        $allowed  =array('jpg');
 
         if (in_array($fileActualExt,$allowed)) {
             if ($fileError===0) {

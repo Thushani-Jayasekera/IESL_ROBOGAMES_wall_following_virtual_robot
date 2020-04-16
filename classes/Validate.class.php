@@ -52,8 +52,10 @@ class Validate{
                                     $this->addError($rules['name']."must be selected");
                                 }
                                 break;
-                        case 'aplhanumeric':
-                            //alphanemric check
+                        case 'IDformat':
+                                if(!is_numeric(substr($value,0,8)) || !$value[9]==='V'){
+                                    $this->addError($rules['name']."must be a valid National ID number in format xxxxxxxxxV");
+                                }
                         break;
                     }
                 }

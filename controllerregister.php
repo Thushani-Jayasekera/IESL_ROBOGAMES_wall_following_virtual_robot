@@ -23,9 +23,10 @@ if (Input::exists()) {
             'user_uid' => array(
                 'name' => 'User name',
                 'required' => true,
-                'min' => 2,
-                'max' => 50,
-                'unique' => 'users'
+                'min' => 10,
+                'max' => 10,
+                'unique' => 'users',
+                'IDformat' => true,
             ),
             'user_pwd' => array(
                 'name' => 'Password',
