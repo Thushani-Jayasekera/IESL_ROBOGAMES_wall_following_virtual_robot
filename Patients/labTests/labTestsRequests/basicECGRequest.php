@@ -1,17 +1,19 @@
 <?php
   session_start();
-  include_once "../../classes/patientview.class.php";
+  include_once "../../includes/patientview.inc.php";
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
    <head>
     <meta charset="utf-8">
     <title>Basci ECG Request</title>
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../../css/labTestRequests.css">
   </head>
   <body>
-    <div class="form-style-10">
+    <div class="form-style">
       <h1>CARDIAC INVESTIGATION UNIT</h1>
+      <h2>Basic ECG Request</h2>
       <?php
         $nic = '982753295V';  // this should be given by a session object
         $patientViewObject = new PatientView();
@@ -27,6 +29,7 @@
           <input type="date" name="dateOfRequest">
         </div>
         <br><br>
+
         <div class="section"><span>2</span>Personal Info</div>
         <div class="inner-wrap">
           <?php
@@ -48,7 +51,7 @@
 
         </div><br><br>
 
-        <div class="section"><span>1</span>Medical Info</div>
+        <div class="section"><span>3</span>Medical Info</div>
         <div class="inner-wrap">
           <label>Ward No : </label><input type="number" name="ward_no"><br>
           <label>Ward : </label>OPD <input type="radio" name="ward" value="OPD"> ICU <input type="radio" name="ward" value="ICU"> PULHEEMS <input type="radio" name="ward" value="PULHEEMS">
@@ -64,7 +67,7 @@
           <label>Short History of case : </label><textarea name="shortHistory" rows="4" cols="50"></textarea><br><br><br>
         </div><br><br>
 
-        <div class="section"><span>1</span>Medical Info</div>
+        <div class="section"><span>4</span>Doctor's Info</div>
         <div class="inner-wrap">
           <?php
             $consMOName = "Dr. KPN Pathirana"; // should get from a session
