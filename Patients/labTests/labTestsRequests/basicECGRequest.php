@@ -1,6 +1,6 @@
 <?php
   session_start();
-  include_once "../../includes/class-autoload.inc.php";
+  include_once "../../classes/patientcontr.class.php";
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
