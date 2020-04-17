@@ -1,6 +1,6 @@
 <?php
   session_start();
-  include_once "../../includes/patientview.inc.php";
+  include_once "../../classes/patientview.class.php";
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
