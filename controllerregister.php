@@ -64,7 +64,7 @@ if (Input::exists()) {
                 Session::flash('home', 'You are now registered you can now log in');
                 Redirect::to('index.php');
             } catch (Exception $e) {
-                die($e->getMessage());
+                Redirect::to('viewregister.php','database error');
             }
         } else {
             $errors= '';
